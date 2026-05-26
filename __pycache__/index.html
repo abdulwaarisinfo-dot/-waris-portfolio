@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pixup8k - AI Assistant</title>
+    <!-- Google Fonts for professional look -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --primary-soft: #dbeafe;
+            --text-dark: #1e293b;
+            --text-grey: #64748b;
+            --bg-light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.9);
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-light);
+            background-image: radial-gradient(at 0% 0%, hsla(217,100%,97%,1) 0, transparent 50%), 
+                              radial-gradient(at 50% 0%, hsla(220,100%,94%,1) 0, transparent 50%);
+            display: flex;
+            flex-direction: column;
+            color: var(--text-dark);
+        }
+
+        /* CONTAINER DESIGN */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-left: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+        }
+
+        /* HEADER DESIGN */
+        .chat-header {
+            background: #ffffff;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            z-index: 10;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-brand .dot {
+            width: 10px;
+            height: 10px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #22c55e88;
+        }
+
+        .header-brand span {
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: -0.5px;
+            color: var(--text-dark);
+        }
+
+        #langSelect {
+            padding: 8px 12px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            background: white;
+            color: var(--text-grey);
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        #langSelect:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* CHAT AREA */
+        #chatBox {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            scroll-behavior: smooth;
+        }
+
+        #chatBox::-webkit-scrollbar { width: 5px; }
+        #chatBox::-webkit-scrollbar-thumb { background: var(--primary-soft); border-radius: 10px; }
+
+        .msg-wrapper {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            max-width: 85%;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .user-wrapper { align-self: flex-end; flex-direction: row-reverse; }
+        .bot-wrapper { align-self: flex-start; }
+
+        .msg {
+            padding: 12px 18px;
+            border-radius: 18px;
+            font-size: 15px;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .user-msg {
+            background: var(--primary);
+            color: white;
+            border-bottom-right-radius: 4px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        .bot-msg {
+            background: white;
+            color: var(--text-dark);
+            border: 1px solid var(--border);
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        /* THINKING INDICATOR */
+        .thinking-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 4px 0;
+            align-items: center;
+        }
+
+        .thinking-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--text-grey);
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .thinking-dot:nth-child(1) { animation-delay: -0.32s; }
+        .thinking-dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+        }
+
+        /* PRODUCT CAROUSEL */
+        .carousel {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            padding: 5px 5px 15px 5px;
+            margin-top: 10px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .carousel::-webkit-scrollbar { display: none; }
+
+        .product-card {
+            min-width: 200px;
+            max-width: 200px;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            padding: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-soft);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: contain;
+            background: var(--bg-light);
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dark);
+            height: 36px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-bottom: 8px;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .view-btn {
+            background: var(--primary-light);
+            color: var(--primary);
+            border: none;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .view-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* SUGGESTION CHIPS */
+        .chip-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .chip {
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid var(--primary-soft);
+            border-radius: 20px;
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .chip:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* INPUT AREA */
+        .input-area-wrapper {
+            background: white;
+            padding: 16px 24px 24px 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .input-area {
+            display: flex;
+            align-items: center;
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 6px 6px 6px 20px;
+            gap: 10px;
+            transition: all 0.2s;
+        }
+
+        .input-area:focus-within {
+            background: white;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px var(--primary-light);
+        }
+
+        .input-area input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 10px 0;
+            font-size: 15px;
+            font-family: inherit;
+            outline: none;
+            color: var(--text-dark);
+        }
+
+        .input-area button {
+            width: 42px;
+            height: 42px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+
+        .input-area button:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+        }
+
+        /* TOAST */
+        .analytics-toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            color: var(--text-dark);
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary);
+            transform: translateX(120%);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1000;
+        }
+
+        .analytics-toast.show { transform: translateX(0); }
+    </style>
+</head>
+
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">
+        <div class="header-brand">
+            <div class="dot"></div>
+            <span>(BRAND NAME) AI ASSISTANT</span>
+        </div>
+        <select id="langSelect">
+            <option value="en">English</option>
+            <option value="ur">اردو</option>
+            <option value="de">Deutsch</option>
+        </select>
+    </div>
+
+    <div id="chatBox">
+        <div class="msg-wrapper bot-wrapper">
+            <div class="msg bot-msg">
+                Hello! I'm your Stellar Style assistant. How can I help you find the perfect outfit today?
+            </div>
+        </div>
+    </div>
+
+    <div class="input-area-wrapper">
+        <div class="input-area">
+            <input id="userInput" type="text" placeholder="Message Stellar Style..." autocomplete="off">
+            <button onclick="sendMessage()">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="analyticsToast" class="analytics-toast">Tracking data synchronized...</div>
+
+<script>
+let ws;
+const chatBox = document.getElementById("chatBox");
+const input = document.getElementById("userInput");
+const langSelect = document.getElementById("langSelect");
+const toast = document.getElementById("analyticsToast");
+let thinkingEl = null;
+
+function showToast(msg) {
+    toast.innerText = msg;
+    toast.classList.add("show");
+    setTimeout(() => { toast.classList.remove("show"); }, 3000);
+}
+
+async function trackLanguage(langCode) {
+    const formData = new FormData();
+    formData.append('language', langCode);
+    try {
+        await fetch("/track_language", { method: "POST", body: formData });
+        showToast(`System: Language set to ${langCode.toUpperCase()}`);
+    } catch (e) { console.error("Tracking failed", e); }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    trackLanguage(langSelect.value);
+});
+
+langSelect.addEventListener('change', (e) => {
+    trackLanguage(e.target.value);
+});
+
+function connectWS() {
+    const protocol = location.protocol === "https:" ? "wss" : "ws";
+    ws = new WebSocket(`${protocol}://${location.host}/ws/chat`);
+
+    ws.onmessage = (event) => {
+        // Remove thinking indicator when response arrives
+        hideThinking();
+
+        const data = JSON.parse(event.data);
+        if(data.reply) appendBotMessage(data.reply);
+        if(data.carousel && data.carousel.length > 0) renderProducts(data.carousel);
+        if(data.suggestions && data.suggestions.length > 0) renderSuggestions(data.suggestions);
+    };
+
+    ws.onclose = () => setTimeout(connectWS, 2000);
+}
+
+connectWS();
+
+function createWrapper(text, isUser) {
+    const wrapper = document.createElement("div");
+    wrapper.className = `msg-wrapper ${isUser ? "user-wrapper" : "bot-wrapper"}`;
+    const msg = document.createElement("div");
+    msg.className = `msg ${isUser ? "user-msg" : "bot-msg"}`;
+    // Markdown support for bolding
+    msg.innerHTML = isUser ? text : text.replace(/\*(.*?)\*/g, "<b>$1</b>");
+    wrapper.appendChild(msg);
+    return wrapper;
+}
+
+/**
+ * SHOW THINKING INDICATOR
+ */
+function showThinking() {
+    if (thinkingEl) return;
+    thinkingEl = document.createElement("div");
+    thinkingEl.className = "msg-wrapper bot-wrapper";
+    thinkingEl.innerHTML = `
+        <div class="msg bot-msg">
+            <div class="thinking-indicator">
+                <div class="thinking-dot"></div>
+                <div class="thinking-dot"></div>
+                <div class="thinking-dot"></div>
+            </div>
+        </div>
+    `;
+    chatBox.appendChild(thinkingEl);
+    scrollBottom();
+}
+
+function hideThinking() {
+    if (thinkingEl) {
+        thinkingEl.remove();
+        thinkingEl = null;
+    }
+}
+
+function appendUserMessage(text) {
+    chatBox.appendChild(createWrapper(text, true));
+    scrollBottom();
+}
+
+function appendBotMessage(text) {
+    chatBox.appendChild(createWrapper(text, false));
+    scrollBottom();
+}
+
+async function openProductLink(url, productId) {
+    if (!url || url === "#") return;
+    if (productId) {
+        const formData = new FormData();
+        formData.append('product_id', productId);
+        try {
+            fetch("/track_click", { method: "POST", body: formData }); 
+            showToast(`Metric: Engagement tracked`);
+        } catch (e) { console.error("Tracking failed", e); }
+    }
+    let targetUrl = url.trim();
+    if (!targetUrl.startsWith('http')) targetUrl = 'https://' + targetUrl;
+    window.open(targetUrl, '_blank');
+}
+
+function renderProducts(products) {
+    const container = document.createElement("div");
+    container.className = "msg-wrapper bot-wrapper";
+    
+    const carousel = document.createElement("div");
+    carousel.className = "carousel";
+
+    products.forEach(p => {
+        let imgUrl = p.images?.[0] || p.image_link || p.image || "https://placehold.co/200x150?text=Product";
+        const productId = p.id || p._id || "item_" + Math.random();
+        const directLink = p.image && p.image !== "#" ? p.image : imgUrl;
+
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+            <img src="${imgUrl}" alt="${p.title}" onerror="this.src='https://placehold.co/200x150?text=No+Preview'">
+            <div class="product-title">${p.title || "Product"}</div>
+            <div class="product-price">${p.price?.toString().includes('$') ? '' : '$'}${p.price || "---"}</div>
+            <button class="view-btn" onclick="openProductLink('${directLink}', '${productId}')">View Offer</button>
+        `;
+        carousel.appendChild(card);
+    });
+
+    container.appendChild(carousel);
+    chatBox.appendChild(container);
+    scrollBottom();
+}
+
+function renderSuggestions(list) {
+    removeOldSuggestions();
+    const container = document.createElement("div");
+    container.className = "suggestion-box"; 
+    const chips = document.createElement("div");
+    chips.className = "chip-container";
+    
+    list.forEach(s => {
+        const chip = document.createElement("div");
+        chip.className = "chip";
+        chip.innerText = s;
+        chip.onclick = () => { 
+            input.value = s; 
+            sendMessage(); 
+        };
+        chips.appendChild(chip);
+    });
+
+    container.appendChild(chips);
+    chatBox.appendChild(container);
+    scrollBottom();
+}
+
+function removeOldSuggestions() {
+    const oldOnes = document.querySelectorAll(".suggestion-box");
+    oldOnes.forEach(el => el.remove());
+}
+
+function sendMessage() {
+    const text = input.value.trim();
+    if (!text || ws.readyState !== WebSocket.OPEN) return;
+    
+    removeOldSuggestions();
+    appendUserMessage(text);
+    
+    // Show thinking state
+    showThinking();
+    
+    ws.send(text);
+    input.value = "";
+}
+
+input.addEventListener("keypress", e => { if (e.key === "Enter") sendMessage(); });
+function scrollBottom() { chatBox.scrollTop = chatBox.scrollHeight; }
+</script>
+
+</body>
+</html>
