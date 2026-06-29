@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muhammad Waris Ali — AI Backend Engineer</title>
+<title>Muhammad Waris Ali — AI Backend Engineer & Entrepreneur</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ── TOKENS ── */
 :root {
   --ink:        #0E0F11;
   --ink2:       #181A1E;
@@ -28,24 +27,21 @@
   --line:       rgba(14,15,17,0.10);
   --line2:      rgba(14,15,17,0.16);
   --r:          10px;
-  --gap:        8px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
-
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--surface);
   color: var(--text);
   overflow-x: hidden;
 }
-
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--surface); }
 ::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 99px; }
 
-/* ── NAV ── */
+/* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 500;
   display: flex; align-items: center; justify-content: space-between;
@@ -61,9 +57,7 @@ nav.scrolled {
 }
 .nav-logo {
   font-family: 'DM Serif Display', serif;
-  font-size: 1.3rem;
-  color: var(--ink);
-  letter-spacing: -0.01em;
+  font-size: 1.3rem; color: var(--ink); letter-spacing: -0.01em;
 }
 .nav-logo span { color: var(--amber); }
 .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
@@ -79,8 +73,7 @@ nav.scrolled {
   font-family: 'DM Mono', monospace;
   font-size: 0.66rem; font-weight: 500; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--green);
-  background: var(--green-bg);
-  border: 1px solid var(--green-bdr);
+  background: var(--green-bg); border: 1px solid var(--green-bdr);
   border-radius: 99px; padding: 6px 14px;
 }
 .nav-avail::before {
@@ -90,7 +83,7 @@ nav.scrolled {
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
 
-/* ── HERO ── */
+/* HERO */
 .hero {
   min-height: 100svh;
   display: grid; grid-template-columns: 1fr 1fr;
@@ -112,9 +105,7 @@ nav.scrolled {
 .hero-name {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(4rem, 8.5vw, 7.5rem);
-  line-height: 1.0;
-  color: var(--ink);
-  letter-spacing: -0.02em;
+  line-height: 1.0; color: var(--ink); letter-spacing: -0.02em;
   animation: fadeUp .6s .2s both;
 }
 .hero-name .accent { color: var(--amber); }
@@ -123,8 +114,7 @@ nav.scrolled {
   font-family: 'DM Serif Display', serif;
   font-style: italic;
   font-size: clamp(1.15rem, 2vw, 1.55rem);
-  color: var(--text-2);
-  line-height: 1.5;
+  color: var(--text-2); line-height: 1.5;
   animation: fadeUp .6s .3s both;
 }
 .hero-desc {
@@ -159,16 +149,13 @@ nav.scrolled {
 }
 .btn-outline:hover { border-color: var(--ink); color: var(--ink); }
 
-/* Hero right: stat panel */
+/* Hero stat panel */
 .hero-right { animation: fadeUp .6s .5s both; }
 .stat-panel {
-  background: var(--ink);
-  border-radius: 16px;
-  overflow: hidden;
+  background: var(--ink); border-radius: 16px; overflow: hidden;
 }
 .stat-panel-header {
-  padding: 18px 22px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,0.07);
   display: flex; align-items: center; justify-content: space-between;
 }
 .stat-panel-title {
@@ -191,8 +178,7 @@ nav.scrolled {
 .stat-cell:nth-child(3), .stat-cell:nth-child(4) { border-bottom: none; }
 .stat-num {
   font-family: 'DM Serif Display', serif;
-  font-size: 3.2rem; line-height: 1;
-  color: #F4F1EC;
+  font-size: 3.2rem; line-height: 1; color: #F4F1EC;
 }
 .stat-num sup { font-size: 1.3rem; color: #C17E2A; vertical-align: super; }
 .stat-label {
@@ -210,8 +196,6 @@ nav.scrolled {
   animation: barGrow 1.4s 1s both;
 }
 @keyframes barGrow { from { width: 0 } }
-
-/* scroll hint */
 .scroll-hint {
   position: absolute; bottom: 40px; left: 0;
   display: flex; align-items: center; gap: 12px;
@@ -227,10 +211,9 @@ nav.scrolled {
 @keyframes lineGrow { from { transform: scaleY(0) } }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px) } to { opacity: 1; transform: translateY(0) } }
 
-/* ── SHARED SECTION ── */
+/* SHARED */
 section { padding: 96px 6%; }
 .sep { border: none; height: 1px; background: var(--line); margin: 0 6%; }
-
 .s-eyebrow {
   font-family: 'DM Mono', monospace;
   font-size: 0.66rem; font-weight: 500; letter-spacing: 0.2em;
@@ -239,37 +222,30 @@ section { padding: 96px 6%; }
   margin-bottom: 18px;
 }
 .s-eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--amber); }
-
 .s-heading {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(2.6rem, 5.5vw, 4.8rem);
   line-height: 1.0; letter-spacing: -0.02em;
   color: var(--ink); margin-bottom: 56px;
 }
-.s-heading em {
-  font-style: italic; color: var(--amber);
-}
+.s-heading em { font-style: italic; color: var(--amber); }
 
-/* ── SKILLS ── */
+/* SKILLS */
 #skills { background: var(--surface); }
 .skills-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
   border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
-  background: var(--line);
-  gap: 1px;
+  background: var(--line); gap: 1px;
 }
 .skill-card {
-  background: var(--surface);
-  padding: 32px 28px;
-  transition: background .22s;
-  position: relative; overflow: hidden;
+  background: var(--surface); padding: 32px 28px;
+  transition: background .22s; position: relative; overflow: hidden;
 }
 .skill-card::after {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 2px;
   background: var(--amber);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform .28s;
+  transform: scaleX(0); transform-origin: left; transition: transform .28s;
 }
 .skill-card:hover { background: var(--surface2); }
 .skill-card:hover::after { transform: scaleX(1); }
@@ -288,20 +264,162 @@ section { padding: 96px 6%; }
   font-family: 'DM Mono', monospace;
   font-size: 0.66rem; font-weight: 500;
   padding: 4px 10px; border-radius: 4px;
-  background: var(--surface3);
-  color: var(--text-2);
+  background: var(--surface3); color: var(--text-2);
   border: 1px solid var(--line2);
 }
 
-/* ── PROJECTS ── */
+/* PRODUCT SPOTLIGHT — Flintel */
+#product { background: var(--ink); }
+.product-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 72px; align-items: center;
+}
+.product-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.66rem; font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--amber);
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 18px;
+}
+.product-eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--amber); }
+.product-heading {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 1.0; letter-spacing: -0.02em;
+  color: #F4F1EC; margin-bottom: 20px;
+}
+.product-heading em { font-style: italic; color: var(--amber); }
+.product-sub {
+  font-size: 0.95rem; color: rgba(244,241,236,0.55); line-height: 1.8;
+  margin-bottom: 32px;
+}
+.product-features {
+  list-style: none; display: flex; flex-direction: column; gap: 12px;
+  margin-bottom: 36px;
+}
+.product-features li {
+  display: flex; gap: 14px; align-items: flex-start;
+  font-size: 0.84rem; color: rgba(244,241,236,0.7); line-height: 1.6;
+}
+.product-features li::before {
+  content: '//'; color: var(--amber);
+  font-family: 'DM Mono', monospace; font-size: 0.66rem;
+  flex-shrink: 0; margin-top: 3px;
+}
+.product-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.p-btn-solid {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--amber); color: var(--ink);
+  padding: 13px 28px; border-radius: var(--r);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.07em;
+  text-transform: uppercase; text-decoration: none;
+  transition: background .2s, transform .2s;
+}
+.p-btn-solid:hover { background: #d99030; transform: translateY(-2px); }
+.p-btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: rgba(244,241,236,0.6);
+  padding: 13px 28px; border-radius: var(--r);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.07em;
+  text-transform: uppercase; text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.14);
+  transition: border-color .2s, color .2s;
+}
+.p-btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
+
+/* Flintel right panel */
+.flintel-panel {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; overflow: hidden;
+}
+.flintel-panel-header {
+  padding: 16px 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.flintel-panel-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.64rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(255,255,255,0.3);
+}
+.flintel-live-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--green);
+  background: var(--green-bg); border: 1px solid var(--green-bdr);
+  border-radius: 99px; padding: 3px 10px;
+  display: flex; align-items: center; gap: 5px;
+}
+.flintel-live-badge::before {
+  content: ''; width: 4px; height: 4px; border-radius: 50%;
+  background: var(--green); animation: blink 2s infinite;
+}
+.signal-feed { padding: 18px 22px; display: flex; flex-direction: column; gap: 12px; }
+.signal-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px; padding: 14px 16px;
+}
+.signal-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.3); margin-bottom: 6px;
+  display: flex; gap: 8px; align-items: center;
+}
+.signal-platform {
+  color: var(--amber); font-weight: 500;
+}
+.signal-text {
+  font-size: 0.78rem; color: rgba(244,241,236,0.65); line-height: 1.55;
+  margin-bottom: 10px;
+}
+.signal-score-row {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.signal-score {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em;
+}
+.score-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem; color: var(--amber); margin-left: 6px;
+}
+.signal-action {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--green); background: var(--green-bg);
+  border: 1px solid var(--green-bdr); border-radius: 4px; padding: 3px 8px;
+}
+.flintel-stat-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.flintel-stat {
+  padding: 16px 18px; text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+.flintel-stat:last-child { border-right: none; }
+.flintel-stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem; color: #F4F1EC; line-height: 1;
+}
+.flintel-stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.56rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.3);
+  margin-top: 4px;
+}
+
+/* PROJECTS */
 #projects { background: var(--surface2); }
 .projects-grid {
-  display: grid; grid-template-columns: 7fr 5fr;
-  gap: 14px;
+  display: grid; grid-template-columns: 7fr 5fr; gap: 14px;
 }
 .project-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--surface); border: 1px solid var(--line);
   border-radius: 14px; overflow: hidden;
   display: flex; flex-direction: column;
   transition: border-color .25s, box-shadow .25s;
@@ -311,29 +429,23 @@ section { padding: 96px 6%; }
   box-shadow: 0 6px 28px rgba(14,15,17,0.07);
 }
 .project-card.featured { grid-column: 1 / -1; flex-direction: row; }
-
 .project-visual {
   height: 210px; position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
 .project-card.featured .project-visual { width: 320px; height: auto; min-height: 250px; }
-
 .pv-ecom  { background: linear-gradient(145deg, #1c150a 0%, #0E0F11 100%); }
 .pv-wa    { background: linear-gradient(145deg, #091510 0%, #0E0F11 100%); }
 .pv-rag   { background: linear-gradient(145deg, #100818 0%, #0E0F11 100%); }
 .pv-media { background: linear-gradient(145deg, #080f1c 0%, #0E0F11 100%); }
-
 .pv-grid {
   position: absolute; inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
   background-size: 30px 30px;
 }
-.pv-icon {
-  position: relative; z-index: 2; font-size: 3.2rem;
-}
-
+.pv-icon { position: relative; z-index: 2; font-size: 3.2rem; }
 .project-body { padding: 26px 26px 22px; flex: 1; display: flex; flex-direction: column; }
 .project-meta { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
 .badge {
@@ -344,18 +456,16 @@ section { padding: 96px 6%; }
 .b-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-bdr); }
 .b-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-bdr); }
 .b-muted { background: var(--surface3); color: var(--text-3); border: 1px solid var(--line); }
-
 .project-body h3 {
   font-family: 'DM Serif Display', serif;
   font-size: 1.35rem; line-height: 1.25;
   margin-bottom: 10px; color: var(--ink);
 }
 .project-card.featured .project-body h3 { font-size: 1.65rem; }
-.project-body > p {
-  font-size: 0.85rem; color: var(--text-2); line-height: 1.75; flex: 1;
-}
+.project-body > p { font-size: 0.85rem; color: var(--text-2); line-height: 1.75; flex: 1; }
 .feature-list {
-  margin-top: 16px; list-style: none; display: flex; flex-direction: column; gap: 7px;
+  margin-top: 16px; list-style: none;
+  display: flex; flex-direction: column; gap: 7px;
 }
 .feature-list li {
   font-size: 0.80rem; color: var(--text-2);
@@ -380,41 +490,32 @@ section { padding: 96px 6%; }
 .l-solid:hover { background: var(--navy); }
 .l-ghost { background: transparent; color: var(--text-3); border: 1px solid var(--line2); }
 .l-ghost:hover { border-color: var(--ink); color: var(--ink); }
-
-/* Pixup4 helper */
 .pixup-row { display: flex; flex-direction: row; }
 
-/* ── ARCHITECTURE ── */
+/* ARCHITECTURE */
 #arch { background: var(--surface); }
 .arch-top {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 56px; align-items: start;
-  margin-bottom: 52px;
+  gap: 56px; align-items: start; margin-bottom: 52px;
 }
 .arch-intro {
-  font-size: 0.9rem; color: var(--text-2); line-height: 1.8;
-  padding-top: 6px;
+  font-size: 0.9rem; color: var(--text-2); line-height: 1.8; padding-top: 6px;
 }
 .arch-intro strong { color: var(--ink); font-weight: 600; }
-
 .arch-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 1px; background: var(--line);
   border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
 }
 .arch-cell {
-  background: var(--surface);
-  padding: 24px 20px;
-  transition: background .22s;
+  background: var(--surface); padding: 24px 20px; transition: background .22s;
 }
 .arch-cell:hover { background: var(--surface2); }
 .arch-cell:hover .arch-num { color: var(--amber); }
 .arch-num {
   font-family: 'DM Mono', monospace;
   font-size: 0.6rem; font-weight: 500; letter-spacing: 0.12em;
-  color: var(--text-3);
-  margin-bottom: 12px; display: block;
-  transition: color .22s;
+  color: var(--text-3); margin-bottom: 12px; display: block; transition: color .22s;
 }
 .arch-cell h4 {
   font-size: 0.83rem; font-weight: 600; color: var(--ink);
@@ -422,7 +523,7 @@ section { padding: 96px 6%; }
 }
 .arch-cell p { font-size: 0.74rem; color: var(--text-2); line-height: 1.65; }
 
-/* ── CERTIFICATIONS ── */
+/* CERTIFICATIONS */
 #certifications { background: var(--surface2); }
 .cert-list {
   display: flex; flex-direction: column;
@@ -430,10 +531,8 @@ section { padding: 96px 6%; }
 }
 .cert-row {
   display: flex; align-items: center; gap: 24px;
-  padding: 22px 28px;
-  border-bottom: 1px solid var(--line);
-  background: var(--surface);
-  transition: background .2s;
+  padding: 22px 28px; border-bottom: 1px solid var(--line);
+  background: var(--surface); transition: background .2s;
 }
 .cert-row:last-child { border-bottom: none; }
 .cert-row:hover { background: var(--surface2); }
@@ -445,8 +544,7 @@ section { padding: 96px 6%; }
 .cert-body { flex: 1; }
 .cert-body h4 { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
 .cert-body p {
-  margin-top: 4px;
-  font-family: 'DM Mono', monospace;
+  margin-top: 4px; font-family: 'DM Mono', monospace;
   font-size: 0.68rem; color: var(--text-3); letter-spacing: 0.04em;
 }
 .cert-badge {
@@ -454,15 +552,12 @@ section { padding: 96px 6%; }
   font-size: 0.62rem; font-weight: 500; letter-spacing: 0.1em;
   text-transform: uppercase; padding: 4px 12px; border-radius: 3px;
   color: var(--green); background: var(--green-bg);
-  border: 1px solid var(--green-bdr);
-  flex-shrink: 0;
+  border: 1px solid var(--green-bdr); flex-shrink: 0;
 }
 
-/* ── CONTACT ── */
+/* CONTACT */
 #contact { background: var(--ink); }
-.contact-inner {
-  max-width: 720px; margin: 0 auto; text-align: center;
-}
+.contact-inner { max-width: 720px; margin: 0 auto; text-align: center; }
 .contact-heading {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(4rem, 10vw, 8.5rem);
@@ -476,8 +571,8 @@ section { padding: 96px 6%; }
   color: rgba(244,241,236,0.5); margin-bottom: 44px; line-height: 1.6;
 }
 .contact-buttons {
-  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
-  margin-bottom: 48px;
+  display: flex; gap: 12px; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 48px;
 }
 .contact-btn-solid {
   display: inline-flex; align-items: center; gap: 8px;
@@ -506,17 +601,14 @@ section { padding: 96px 6%; }
 .contact-detail-item {
   display: flex; align-items: center; gap: 8px;
   font-family: 'DM Mono', monospace;
-  font-size: 0.72rem; color: rgba(244,241,236,0.4);
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  transition: color .2s;
+  font-size: 0.72rem; color: rgba(244,241,236,0.4); letter-spacing: 0.04em;
+  text-decoration: none; transition: color .2s;
 }
 .contact-detail-item:hover { color: rgba(244,241,236,0.7); }
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer {
-  background: var(--ink2);
-  border-top: 1px solid rgba(255,255,255,0.06);
+  background: var(--ink2); border-top: 1px solid rgba(255,255,255,0.06);
   display: flex; align-items: center; justify-content: space-between;
   padding: 20px 6%; flex-wrap: wrap; gap: 10px;
 }
@@ -531,11 +623,11 @@ footer {
   font-size: 0.65rem; color: rgba(244,241,236,0.2); letter-spacing: 0.08em;
 }
 
-/* ── REVEAL ── */
+/* REVEAL */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
 .reveal.in { opacity: 1; transform: none; }
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; }
   .hero-right { display: none; }
@@ -546,6 +638,7 @@ footer {
   .project-card.featured .project-visual { width: 100%; min-height: 200px; }
   .pixup-row { flex-direction: column; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-inner { grid-template-columns: 1fr; gap: 48px; }
 }
 @media (max-width: 640px) {
   nav { padding: 16px 5%; }
@@ -557,16 +650,19 @@ footer {
   .hero-name { font-size: 3.6rem; }
   .s-heading { font-size: 2.6rem; }
   footer { flex-direction: column; gap: 8px; text-align: center; }
+  .flintel-stat-row { grid-template-columns: 1fr; }
+  .flintel-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
 }
 </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
+<!-- NAV -->
 <nav id="main-nav">
   <div class="nav-logo">Waris<span>.</span></div>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#product">Flintel</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#arch">Architecture</a></li>
     <li><a href="#certifications">Certs</a></li>
@@ -575,10 +671,10 @@ footer {
   <div class="nav-avail">Open to Work</div>
 </nav>
 
-<!-- ══════════ HERO ══════════ -->
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-left">
-    <div class="hero-eyebrow">AI Backend Engineer · Karachi, Pakistan</div>
+    <div class="hero-eyebrow">AI Backend Engineer & Entrepreneur · Karachi, Pakistan</div>
     <h1 class="hero-name">
       Muhammad<br>Waris <span class="accent">Ali.</span>
     </h1>
@@ -587,8 +683,8 @@ footer {
       Production-grade AI backends, conversational assistants, RAG-powered knowledge systems, and intelligent automation pipelines — engineered to scale and built to last.
     </p>
     <div class="hero-cta">
-      <a href="#projects" class="btn-primary">View Projects →</a>
-      <a href="#contact" class="btn-outline">Contact</a>
+      <a href="#product" class="btn-primary">See Flintel →</a>
+      <a href="#projects" class="btn-outline">All Projects</a>
     </div>
     <div class="scroll-hint">
       <div class="scroll-line"></div>
@@ -604,9 +700,9 @@ footer {
       </div>
       <div class="stat-grid">
         <div class="stat-cell">
-          <div class="stat-num">4<sup>+</sup></div>
+          <div class="stat-num">5<sup>+</sup></div>
           <div class="stat-label">Production<br>Projects</div>
-          <div class="stat-bar"><div class="stat-bar-fill" style="width:80%"></div></div>
+          <div class="stat-bar"><div class="stat-bar-fill" style="width:85%"></div></div>
         </div>
         <div class="stat-cell">
           <div class="stat-num">3<sup>+</sup></div>
@@ -630,11 +726,10 @@ footer {
 
 <hr class="sep">
 
-<!-- ══════════ SKILLS ══════════ -->
+<!-- SKILLS -->
 <section id="skills">
   <div class="s-eyebrow">Technical Expertise</div>
   <div class="s-heading">What I <em>Build</em> With</div>
-
   <div class="skills-grid reveal">
     <div class="skill-card">
       <span class="skill-num">01 — Backend</span>
@@ -700,7 +795,78 @@ footer {
 
 <hr class="sep">
 
-<!-- ══════════ PROJECTS ══════════ -->
+<!-- FLINTEL PRODUCT SPOTLIGHT -->
+<section id="product">
+  <div class="product-inner reveal">
+    <div>
+      <div class="product-eyebrow">Founder · AI Product</div>
+      <h2 class="product-heading">Flintel —<br><em>Signal Intelligence</em><br>for Sales Teams</h2>
+      <p class="product-sub">
+        A real-time AI system that monitors Twitter/X, Reddit, Telegram, and competitor reviews continuously. The moment a buyer posts publicly about a problem your product solves, Flintel scores their intent, identifies who they are, writes the outreach script, and delivers everything to Slack and HubSpot — in under 90 seconds.
+      </p>
+      <ul class="product-features">
+        <li>Monitors Twitter/X, Reddit, Telegram & competitor reviews 24/7</li>
+        <li>Intent scoring 0–10 with buyer identification and profile enrichment</li>
+        <li>AI-generated outreach script delivered with each signal</li>
+        <li>Slack + HubSpot delivery in under 90 seconds — not a concept, already deployed</li>
+        <li>Built for financial services, payments, travel, and any business where buyers signal publicly before they decide</li>
+      </ul>
+      <div class="product-cta">
+        <a href="https://getflintel.com" target="_blank" class="p-btn-solid">Visit Flintel →</a>
+        <a href="#contact" class="p-btn-ghost">Discuss a Use Case</a>
+      </div>
+    </div>
+
+    <div class="flintel-panel">
+      <div class="flintel-panel-header">
+        <span class="flintel-panel-title">flintel.signal_feed · live</span>
+        <span class="flintel-live-badge">Live</span>
+      </div>
+      <div class="signal-feed">
+        <div class="signal-item">
+          <div class="signal-meta">
+            <span class="signal-platform">Twitter/X</span>
+            <span>· 23s ago</span>
+          </div>
+          <p class="signal-text">"Our bank just blocked our international wire again. We need a better cross-border payment solution immediately."</p>
+          <div class="signal-score-row">
+            <span class="signal-score">Intent Score <span class="score-val">9.2</span></span>
+            <span class="signal-action">Script Ready ✓</span>
+          </div>
+        </div>
+        <div class="signal-item">
+          <div class="signal-meta">
+            <span class="signal-platform">Reddit</span>
+            <span>· 61s ago</span>
+          </div>
+          <p class="signal-text">"Third failed booking this month. Looking for a travel platform that actually works for group reservations."</p>
+          <div class="signal-score-row">
+            <span class="signal-score">Intent Score <span class="score-val">8.7</span></span>
+            <span class="signal-action">Sent to Slack ✓</span>
+          </div>
+        </div>
+      </div>
+      <div class="flintel-stat-row">
+        <div class="flintel-stat">
+          <div class="flintel-stat-num">&lt;90s</div>
+          <div class="flintel-stat-label">Signal Delivery</div>
+        </div>
+        <div class="flintel-stat">
+          <div class="flintel-stat-num">4</div>
+          <div class="flintel-stat-label">Platforms Monitored</div>
+        </div>
+        <div class="flintel-stat">
+          <div class="flintel-stat-num">24/7</div>
+          <div class="flintel-stat-label">Always Running</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- PROJECTS -->
 <section id="projects">
   <div class="s-eyebrow">Selected Work</div>
   <div class="s-heading"><em>Production</em> Projects</div>
@@ -813,7 +979,7 @@ footer {
 
 <hr class="sep">
 
-<!-- ══════════ ARCHITECTURE ══════════ -->
+<!-- ARCHITECTURE -->
 <section id="arch">
   <div class="arch-top reveal">
     <div>
@@ -871,11 +1037,10 @@ footer {
 
 <hr class="sep">
 
-<!-- ══════════ CERTIFICATIONS ══════════ -->
+<!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="s-eyebrow">Credentials</div>
   <div class="s-heading"><em>Certifications</em></div>
-
   <div class="cert-list reveal">
     <div class="cert-row">
       <span class="cert-index">01</span>
@@ -906,7 +1071,7 @@ footer {
 
 <hr class="sep">
 
-<!-- ══════════ CONTACT ══════════ -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner reveal">
     <div class="contact-heading">LET'S<br><span>BUILD.</span></div>
@@ -927,19 +1092,16 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-left">
-    Designed & built by <strong>Muhammad Waris Ali</strong> · AI Backend Engineer · Karachi, PK
+    Designed & built by <strong>Muhammad Waris Ali</strong> · AI Backend Engineer & Entrepreneur · Karachi, PK
   </div>
-  <div class="footer-right">© 2025 All rights reserved</div>
+  <div class="footer-right">© 2026 All rights reserved</div>
 </footer>
 
 <script>
-// Nav scroll
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 });
-
-// Reveal on scroll
 const revEls = document.querySelectorAll('.reveal');
 const revObs = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
@@ -950,8 +1112,6 @@ const revObs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.07 });
 revEls.forEach(el => revObs.observe(el));
-
-// Active nav link
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 const secObs = new IntersectionObserver(entries => {
