@@ -99,16 +99,26 @@ nav.scrolled {
   padding: 130px 6% 80px;
   gap: 64px;
   border-bottom: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
 }
+.hero-bg-photo {
+  position: absolute; inset: 0; z-index: 0;
+}
+.hero-bg-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center 20%;
+  opacity: 0.16;
+  filter: grayscale(35%);
+}
+.hero-bg-photo::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(100deg, #FFFFFF 30%, rgba(255,255,255,0.75) 60%, rgba(255,255,255,0.55) 100%);
+}
+.hero-left, .hero-right { position: relative; z-index: 1; }
 .hero-left { position: relative; }
-.hero-photo {
-  width: 96px; height: 96px; border-radius: 50%;
-  overflow: hidden; margin-bottom: 24px;
-  border: 1px solid var(--line2);
-  box-shadow: 0 8px 24px rgba(11,37,69,0.10);
-  animation: fadeUp .6s .05s both;
-}
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-top-row { margin-bottom: 32px; }
 .hero-eyebrow {
   font-family: 'DM Mono', monospace;
   font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em;
@@ -703,10 +713,10 @@ footer {
 
 <!-- HERO -->
 <section class="hero" id="home">
+  <div class="hero-bg-photo">
+    <img src="d5bc413f-1939-4be1-9afa-e2940aa08860_processed.png" alt="">
+  </div>
   <div class="hero-left">
-    <div class="hero-photo">
-      <img src="d5bc413f-1939-4be1-9afa-e2940aa08860_processed.png" alt="Muhammad Waris Ali">
-    </div>
     <div class="hero-eyebrow">AI Backend Engineer · Karachi, Pakistan</div>
     <h1 class="hero-name">
       Muhammad<br>Waris <span class="accent">Ali.</span>
