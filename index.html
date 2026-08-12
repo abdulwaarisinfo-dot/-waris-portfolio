@@ -8,24 +8,24 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink:        #0E0F11;
-  --ink2:       #181A1E;
-  --ink3:       #21242A;
-  --surface:    #F4F1EC;
-  --surface2:   #EBE7E0;
-  --surface3:   #E2DDD5;
-  --text:       #0E0F11;
-  --text-2:     #4A4D55;
-  --text-3:     #8C8F99;
-  --amber:      #C17E2A;
-  --amber-bg:   rgba(193,126,42,0.09);
-  --amber-bdr:  rgba(193,126,42,0.22);
-  --navy:       #1A2744;
-  --green:      #1A6645;
-  --green-bg:   rgba(26,102,69,0.08);
-  --green-bdr:  rgba(26,102,69,0.18);
-  --line:       rgba(14,15,17,0.10);
-  --line2:      rgba(14,15,17,0.16);
+  --ink:        #0B2545;
+  --ink2:       #0E2C52;
+  --ink3:       #14355E;
+  --surface:    #FFFFFF;
+  --surface2:   #F2F8FD;
+  --surface3:   #E7F1FB;
+  --text:       #0B2545;
+  --text-2:     #4B5A6E;
+  --text-3:     #8B98A9;
+  --blue:       #2E7DD1;
+  --blue-bg:    rgba(46,125,209,0.08);
+  --blue-bdr:   rgba(46,125,209,0.22);
+  --navy:       #123A66;
+  --green:      #1A7A55;
+  --green-bg:   rgba(26,122,85,0.08);
+  --green-bdr:  rgba(26,122,85,0.18);
+  --line:       rgba(11,37,69,0.10);
+  --line2:      rgba(11,37,69,0.16);
   --r:          10px;
 }
 
@@ -39,7 +39,7 @@ body {
 }
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--surface); }
-::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 99px; }
+::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 99px; }
 
 /* NAV */
 nav {
@@ -50,7 +50,7 @@ nav {
   border-bottom: 1px solid transparent;
 }
 nav.scrolled {
-  background: rgba(244,241,236,0.92);
+  background: rgba(255,255,255,0.92);
   backdrop-filter: blur(20px);
   border-color: var(--line);
   padding: 14px 6%;
@@ -59,7 +59,7 @@ nav.scrolled {
   font-family: 'DM Serif Display', serif;
   font-size: 1.3rem; color: var(--ink); letter-spacing: -0.01em;
 }
-.nav-logo span { color: var(--amber); }
+.nav-logo span { color: var(--blue); }
 .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
 .nav-links a {
   font-family: 'DM Mono', monospace;
@@ -96,19 +96,19 @@ nav.scrolled {
 .hero-eyebrow {
   font-family: 'DM Mono', monospace;
   font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--amber);
+  text-transform: uppercase; color: var(--blue);
   display: flex; align-items: center; gap: 12px;
   margin-bottom: 32px;
   animation: fadeUp .6s .1s both;
 }
-.hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--amber); }
+.hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--blue); }
 .hero-name {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(4rem, 8.5vw, 7.5rem);
   line-height: 1.0; color: var(--ink); letter-spacing: -0.02em;
   animation: fadeUp .6s .2s both;
 }
-.hero-name .accent { color: var(--amber); }
+.hero-name .accent { color: var(--blue); }
 .hero-tagline {
   margin-top: 28px;
   font-family: 'DM Serif Display', serif;
@@ -136,7 +136,7 @@ nav.scrolled {
   text-transform: uppercase; text-decoration: none;
   transition: background .2s, transform .2s;
 }
-.btn-primary:hover { background: var(--navy); transform: translateY(-2px); }
+.btn-primary:hover { background: var(--blue); transform: translateY(-2px); }
 .btn-outline {
   display: inline-flex; align-items: center; gap: 8px;
   background: transparent; color: var(--text-2);
@@ -155,13 +155,13 @@ nav.scrolled {
   background: var(--ink); border-radius: 16px; overflow: hidden;
 }
 .stat-panel-header {
-  padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,0.08);
   display: flex; align-items: center; justify-content: space-between;
 }
 .stat-panel-title {
   font-family: 'DM Mono', monospace;
   font-size: 0.64rem; font-weight: 500; letter-spacing: 0.14em;
-  text-transform: uppercase; color: rgba(255,255,255,0.35);
+  text-transform: uppercase; color: rgba(255,255,255,0.4);
 }
 .stat-dots { display: flex; gap: 6px; }
 .stat-dots span { width: 8px; height: 8px; border-radius: 50%; }
@@ -171,28 +171,28 @@ nav.scrolled {
 .stat-grid { display: grid; grid-template-columns: 1fr 1fr; }
 .stat-cell {
   padding: 30px 26px;
-  border-right: 1px solid rgba(255,255,255,0.06);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-right: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 .stat-cell:nth-child(2n) { border-right: none; }
 .stat-cell:nth-child(3), .stat-cell:nth-child(4) { border-bottom: none; }
 .stat-num {
   font-family: 'DM Serif Display', serif;
-  font-size: 3.2rem; line-height: 1; color: #F4F1EC;
+  font-size: 3.2rem; line-height: 1; color: #FFFFFF;
 }
-.stat-num sup { font-size: 1.3rem; color: #C17E2A; vertical-align: super; }
+.stat-num sup { font-size: 1.3rem; color: #6FB1E8; vertical-align: super; }
 .stat-label {
   margin-top: 6px;
   font-family: 'DM Mono', monospace;
   font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em;
-  text-transform: uppercase; color: rgba(244,241,236,0.38);
+  text-transform: uppercase; color: rgba(255,255,255,0.42);
 }
 .stat-bar {
   margin-top: 14px; height: 2px;
-  background: rgba(255,255,255,0.08); border-radius: 99px; overflow: hidden;
+  background: rgba(255,255,255,0.1); border-radius: 99px; overflow: hidden;
 }
 .stat-bar-fill {
-  height: 100%; background: #C17E2A; border-radius: 99px;
+  height: 100%; background: #6FB1E8; border-radius: 99px;
   animation: barGrow 1.4s 1s both;
 }
 @keyframes barGrow { from { width: 0 } }
@@ -217,18 +217,18 @@ section { padding: 96px 6%; }
 .s-eyebrow {
   font-family: 'DM Mono', monospace;
   font-size: 0.66rem; font-weight: 500; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--amber);
+  text-transform: uppercase; color: var(--blue);
   display: flex; align-items: center; gap: 10px;
   margin-bottom: 18px;
 }
-.s-eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--amber); }
+.s-eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--blue); }
 .s-heading {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(2.6rem, 5.5vw, 4.8rem);
   line-height: 1.0; letter-spacing: -0.02em;
   color: var(--ink); margin-bottom: 56px;
 }
-.s-heading em { font-style: italic; color: var(--amber); }
+.s-heading em { font-style: italic; color: var(--blue); }
 
 /* SKILLS */
 #skills { background: var(--surface); }
@@ -244,7 +244,7 @@ section { padding: 96px 6%; }
 .skill-card::after {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: var(--amber);
+  background: var(--blue);
   transform: scaleX(0); transform-origin: left; transition: transform .28s;
 }
 .skill-card:hover { background: var(--surface2); }
@@ -277,20 +277,20 @@ section { padding: 96px 6%; }
 .product-eyebrow {
   font-family: 'DM Mono', monospace;
   font-size: 0.66rem; font-weight: 500; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--amber);
+  text-transform: uppercase; color: #6FB1E8;
   display: flex; align-items: center; gap: 10px;
   margin-bottom: 18px;
 }
-.product-eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--amber); }
+.product-eyebrow::before { content: ''; width: 22px; height: 1px; background: #6FB1E8; }
 .product-heading {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(2.8rem, 5vw, 5rem);
   line-height: 1.0; letter-spacing: -0.02em;
-  color: #F4F1EC; margin-bottom: 20px;
+  color: #FFFFFF; margin-bottom: 20px;
 }
-.product-heading em { font-style: italic; color: var(--amber); }
+.product-heading em { font-style: italic; color: #6FB1E8; }
 .product-sub {
-  font-size: 0.95rem; color: rgba(244,241,236,0.55); line-height: 1.8;
+  font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.8;
   margin-bottom: 32px;
 }
 .product-features {
@@ -299,81 +299,81 @@ section { padding: 96px 6%; }
 }
 .product-features li {
   display: flex; gap: 14px; align-items: flex-start;
-  font-size: 0.84rem; color: rgba(244,241,236,0.7); line-height: 1.6;
+  font-size: 0.84rem; color: rgba(255,255,255,0.72); line-height: 1.6;
 }
 .product-features li::before {
-  content: '//'; color: var(--amber);
+  content: '//'; color: #6FB1E8;
   font-family: 'DM Mono', monospace; font-size: 0.66rem;
   flex-shrink: 0; margin-top: 3px;
 }
 .product-cta { display: flex; gap: 12px; flex-wrap: wrap; }
 .p-btn-solid {
   display: inline-flex; align-items: center; gap: 8px;
-  background: var(--amber); color: var(--ink);
+  background: #6FB1E8; color: var(--ink);
   padding: 13px 28px; border-radius: var(--r);
   font-family: 'DM Mono', monospace;
   font-size: 0.75rem; font-weight: 500; letter-spacing: 0.07em;
   text-transform: uppercase; text-decoration: none;
   transition: background .2s, transform .2s;
 }
-.p-btn-solid:hover { background: #d99030; transform: translateY(-2px); }
+.p-btn-solid:hover { background: #98C8F0; transform: translateY(-2px); }
 .p-btn-ghost {
   display: inline-flex; align-items: center; gap: 8px;
-  background: transparent; color: rgba(244,241,236,0.6);
+  background: transparent; color: rgba(255,255,255,0.65);
   padding: 13px 28px; border-radius: var(--r);
   font-family: 'DM Mono', monospace;
   font-size: 0.75rem; font-weight: 500; letter-spacing: 0.07em;
   text-transform: uppercase; text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.16);
   transition: border-color .2s, color .2s;
 }
-.p-btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
+.p-btn-ghost:hover { border-color: #6FB1E8; color: #6FB1E8; }
 
 /* Flintel right panel */
 .flintel-panel {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 16px; overflow: hidden;
 }
 .flintel-panel-header {
   padding: 16px 22px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   display: flex; align-items: center; justify-content: space-between;
 }
 .flintel-panel-title {
   font-family: 'DM Mono', monospace;
   font-size: 0.64rem; letter-spacing: 0.12em;
-  text-transform: uppercase; color: rgba(255,255,255,0.3);
+  text-transform: uppercase; color: rgba(255,255,255,0.35);
 }
 .flintel-live-badge {
   font-family: 'DM Mono', monospace;
   font-size: 0.6rem; font-weight: 500; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--green);
-  background: var(--green-bg); border: 1px solid var(--green-bdr);
+  text-transform: uppercase; color: #6EDBA8;
+  background: rgba(110,219,168,0.1); border: 1px solid rgba(110,219,168,0.25);
   border-radius: 99px; padding: 3px 10px;
   display: flex; align-items: center; gap: 5px;
 }
 .flintel-live-badge::before {
   content: ''; width: 4px; height: 4px; border-radius: 50%;
-  background: var(--green); animation: blink 2s infinite;
+  background: #6EDBA8; animation: blink 2s infinite;
 }
 .signal-feed { padding: 18px 22px; display: flex; flex-direction: column; gap: 12px; }
 .signal-item {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 8px; padding: 14px 16px;
 }
 .signal-meta {
   font-family: 'DM Mono', monospace;
   font-size: 0.58rem; letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.3); margin-bottom: 6px;
+  color: rgba(255,255,255,0.35); margin-bottom: 6px;
   display: flex; gap: 8px; align-items: center;
 }
 .signal-platform {
-  color: var(--amber); font-weight: 500;
+  color: #6FB1E8; font-weight: 500;
 }
 .signal-text {
-  font-size: 0.78rem; color: rgba(244,241,236,0.65); line-height: 1.55;
+  font-size: 0.78rem; color: rgba(255,255,255,0.7); line-height: 1.55;
   margin-bottom: 10px;
 }
 .signal-score-row {
@@ -381,35 +381,35 @@ section { padding: 96px 6%; }
 }
 .signal-score {
   font-family: 'DM Mono', monospace;
-  font-size: 0.62rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em;
+  font-size: 0.62rem; color: rgba(255,255,255,0.35); letter-spacing: 0.06em;
 }
 .score-val {
   font-family: 'DM Serif Display', serif;
-  font-size: 1.1rem; color: var(--amber); margin-left: 6px;
+  font-size: 1.1rem; color: #6FB1E8; margin-left: 6px;
 }
 .signal-action {
   font-family: 'DM Mono', monospace;
   font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--green); background: var(--green-bg);
-  border: 1px solid var(--green-bdr); border-radius: 4px; padding: 3px 8px;
+  color: #6EDBA8; background: rgba(110,219,168,0.1);
+  border: 1px solid rgba(110,219,168,0.25); border-radius: 4px; padding: 3px 8px;
 }
 .flintel-stat-row {
   display: grid; grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 .flintel-stat {
   padding: 16px 18px; text-align: center;
-  border-right: 1px solid rgba(255,255,255,0.06);
+  border-right: 1px solid rgba(255,255,255,0.08);
 }
 .flintel-stat:last-child { border-right: none; }
 .flintel-stat-num {
   font-family: 'DM Serif Display', serif;
-  font-size: 1.6rem; color: #F4F1EC; line-height: 1;
+  font-size: 1.6rem; color: #FFFFFF; line-height: 1;
 }
 .flintel-stat-label {
   font-family: 'DM Mono', monospace;
   font-size: 0.56rem; letter-spacing: 0.1em;
-  text-transform: uppercase; color: rgba(255,255,255,0.3);
+  text-transform: uppercase; color: rgba(255,255,255,0.35);
   margin-top: 4px;
 }
 
@@ -425,8 +425,8 @@ section { padding: 96px 6%; }
   transition: border-color .25s, box-shadow .25s;
 }
 .project-card:hover {
-  border-color: var(--line2);
-  box-shadow: 0 6px 28px rgba(14,15,17,0.07);
+  border-color: var(--blue-bdr);
+  box-shadow: 0 6px 28px rgba(11,37,69,0.08);
 }
 .project-card.featured { grid-column: 1 / -1; flex-direction: row; }
 .project-visual {
@@ -434,15 +434,16 @@ section { padding: 96px 6%; }
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
 .project-card.featured .project-visual { width: 320px; height: auto; min-height: 250px; }
-.pv-ecom  { background: linear-gradient(145deg, #1c150a 0%, #0E0F11 100%); }
-.pv-wa    { background: linear-gradient(145deg, #091510 0%, #0E0F11 100%); }
-.pv-rag   { background: linear-gradient(145deg, #100818 0%, #0E0F11 100%); }
-.pv-media { background: linear-gradient(145deg, #080f1c 0%, #0E0F11 100%); }
+.pv-ecom  { background: linear-gradient(145deg, #123A66 0%, #0B2545 100%); }
+.pv-wa    { background: linear-gradient(145deg, #0E3B5C 0%, #0B2545 100%); }
+.pv-rag   { background: linear-gradient(145deg, #10305C 0%, #0B2545 100%); }
+.pv-media { background: linear-gradient(145deg, #0C2E58 0%, #0B2545 100%); }
+.pv-travel{ background: linear-gradient(145deg, #0E4472 0%, #0B2545 100%); }
 .pv-grid {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
   background-size: 30px 30px;
 }
 .pv-icon { position: relative; z-index: 2; font-size: 3.2rem; }
@@ -453,7 +454,7 @@ section { padding: 96px 6%; }
   font-size: 0.61rem; font-weight: 600; letter-spacing: 0.1em;
   text-transform: uppercase; padding: 3px 9px; border-radius: 3px;
 }
-.b-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-bdr); }
+.b-amber { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-bdr); }
 .b-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-bdr); }
 .b-muted { background: var(--surface3); color: var(--text-3); border: 1px solid var(--line); }
 .project-body h3 {
@@ -472,7 +473,7 @@ section { padding: 96px 6%; }
   display: flex; gap: 10px; align-items: flex-start; line-height: 1.5;
 }
 .feature-list li::before {
-  content: '//'; color: var(--amber);
+  content: '//'; color: var(--blue);
   font-family: 'DM Mono', monospace; font-size: 0.66rem;
   flex-shrink: 0; margin-top: 2px;
 }
@@ -487,7 +488,7 @@ section { padding: 96px 6%; }
   text-decoration: none; transition: all .18s;
 }
 .l-solid { background: var(--ink); color: var(--surface); }
-.l-solid:hover { background: var(--navy); }
+.l-solid:hover { background: var(--blue); }
 .l-ghost { background: transparent; color: var(--text-3); border: 1px solid var(--line2); }
 .l-ghost:hover { border-color: var(--ink); color: var(--ink); }
 .pixup-row { display: flex; flex-direction: row; }
@@ -511,7 +512,7 @@ section { padding: 96px 6%; }
   background: var(--surface); padding: 24px 20px; transition: background .22s;
 }
 .arch-cell:hover { background: var(--surface2); }
-.arch-cell:hover .arch-num { color: var(--amber); }
+.arch-cell:hover .arch-num { color: var(--blue); }
 .arch-num {
   font-family: 'DM Mono', monospace;
   font-size: 0.6rem; font-weight: 500; letter-spacing: 0.12em;
@@ -538,7 +539,7 @@ section { padding: 96px 6%; }
 .cert-row:hover { background: var(--surface2); }
 .cert-index {
   font-family: 'DM Mono', monospace;
-  font-size: 0.64rem; color: var(--amber); letter-spacing: 0.1em;
+  font-size: 0.64rem; color: var(--blue); letter-spacing: 0.1em;
   flex-shrink: 0; width: 28px;
 }
 .cert-body { flex: 1; }
@@ -562,13 +563,13 @@ section { padding: 96px 6%; }
   font-family: 'DM Serif Display', serif;
   font-size: clamp(4rem, 10vw, 8.5rem);
   line-height: 1.0; letter-spacing: -0.02em;
-  color: #F4F1EC; margin-bottom: 6px;
+  color: #FFFFFF; margin-bottom: 6px;
 }
-.contact-heading span { color: #C17E2A; }
+.contact-heading span { color: #6FB1E8; }
 .contact-sub {
   font-family: 'DM Serif Display', serif;
   font-style: italic; font-size: 1.15rem;
-  color: rgba(244,241,236,0.5); margin-bottom: 44px; line-height: 1.6;
+  color: rgba(255,255,255,0.55); margin-bottom: 44px; line-height: 1.6;
 }
 .contact-buttons {
   display: flex; gap: 12px; justify-content: center;
@@ -576,52 +577,65 @@ section { padding: 96px 6%; }
 }
 .contact-btn-solid {
   display: inline-flex; align-items: center; gap: 8px;
-  background: #C17E2A; color: #0E0F11;
+  background: #6FB1E8; color: #0B2545;
   padding: 13px 28px; border-radius: var(--r);
   font-family: 'DM Mono', monospace;
   font-size: 0.75rem; font-weight: 500; letter-spacing: 0.07em;
   text-transform: uppercase; text-decoration: none;
   transition: background .2s, transform .2s;
 }
-.contact-btn-solid:hover { background: #d99030; transform: translateY(-2px); }
+.contact-btn-solid:hover { background: #98C8F0; transform: translateY(-2px); }
 .contact-btn-ghost {
   display: inline-flex; align-items: center; gap: 8px;
-  background: transparent; color: rgba(244,241,236,0.65);
+  background: transparent; color: rgba(255,255,255,0.68);
   padding: 13px 28px; border-radius: var(--r);
   font-family: 'DM Mono', monospace;
   font-size: 0.75rem; font-weight: 500; letter-spacing: 0.07em;
   text-transform: uppercase; text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.16);
   transition: border-color .2s, color .2s;
 }
-.contact-btn-ghost:hover { border-color: #C17E2A; color: #C17E2A; }
+.contact-btn-ghost:hover { border-color: #6FB1E8; color: #6FB1E8; }
 .contact-details {
   display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
 }
 .contact-detail-item {
   display: flex; align-items: center; gap: 8px;
   font-family: 'DM Mono', monospace;
-  font-size: 0.72rem; color: rgba(244,241,236,0.4); letter-spacing: 0.04em;
+  font-size: 0.72rem; color: rgba(255,255,255,0.45); letter-spacing: 0.04em;
   text-decoration: none; transition: color .2s;
 }
-.contact-detail-item:hover { color: rgba(244,241,236,0.7); }
+.contact-detail-item:hover { color: rgba(255,255,255,0.75); }
 
 /* FOOTER */
 footer {
-  background: var(--ink2); border-top: 1px solid rgba(255,255,255,0.06);
+  background: var(--ink2); border-top: 1px solid rgba(255,255,255,0.08);
   display: flex; align-items: center; justify-content: space-between;
   padding: 20px 6%; flex-wrap: wrap; gap: 10px;
 }
 .footer-left {
   font-family: 'DM Mono', monospace;
   font-size: 0.65rem; letter-spacing: 0.1em;
-  color: rgba(244,241,236,0.3); text-transform: uppercase;
+  color: rgba(255,255,255,0.35); text-transform: uppercase;
 }
-.footer-left strong { color: #C17E2A; }
+.footer-left strong { color: #6FB1E8; }
 .footer-right {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem; color: rgba(244,241,236,0.2); letter-spacing: 0.08em;
+  font-size: 0.65rem; color: rgba(255,255,255,0.25); letter-spacing: 0.08em;
+  display: flex; align-items: center; gap: 16px;
 }
+.footer-social { display: flex; align-items: center; gap: 10px; }
+.footer-social a {
+  display: flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.5);
+  transition: border-color .2s, color .2s, background .2s;
+}
+.footer-social a:hover {
+  border-color: #6FB1E8; color: #6FB1E8; background: rgba(111,177,232,0.08);
+}
+.footer-social svg { width: 15px; height: 15px; }
 
 /* REVEAL */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
@@ -651,7 +665,7 @@ footer {
   .s-heading { font-size: 2.6rem; }
   footer { flex-direction: column; gap: 8px; text-align: center; }
   .flintel-stat-row { grid-template-columns: 1fr; }
-  .flintel-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .flintel-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
 }
 </style>
 </head>
@@ -682,6 +696,9 @@ footer {
     <p class="hero-desc">
       Production-grade AI backends, conversational assistants, RAG-powered knowledge systems, and intelligent automation pipelines — engineered to scale and built to last.
     </p>
+    <p class="hero-desc" style="margin-top:14px">
+      I also build AI chatbots, AI assistants, abandoned-cart recovery, and WhatsApp automation for businesses across industries — stores, restaurants, travel agencies, salons, clinics, coaching centers, and more.
+    </p>
     <div class="hero-cta">
       <a href="#product" class="btn-primary">See Flintel →</a>
       <a href="#projects" class="btn-outline">All Projects</a>
@@ -700,14 +717,14 @@ footer {
       </div>
       <div class="stat-grid">
         <div class="stat-cell">
-          <div class="stat-num">5<sup>+</sup></div>
+          <div class="stat-num">6<sup>+</sup></div>
           <div class="stat-label">Production<br>Projects</div>
           <div class="stat-bar"><div class="stat-bar-fill" style="width:85%"></div></div>
         </div>
         <div class="stat-cell">
-          <div class="stat-num">3<sup>+</sup></div>
+          <div class="stat-num">8<sup>+</sup></div>
           <div class="stat-label">Certifications<br>Earned</div>
-          <div class="stat-bar"><div class="stat-bar-fill" style="width:65%"></div></div>
+          <div class="stat-bar"><div class="stat-bar-fill" style="width:85%"></div></div>
         </div>
         <div class="stat-cell">
           <div class="stat-num">8<sup>+</sup></div>
@@ -799,20 +816,20 @@ footer {
 <section id="product">
   <div class="product-inner reveal">
     <div>
-      <div class="product-eyebrow">Founder · AI Product</div>
-      <h2 class="product-heading">Flintel —<br><em>Signal Intelligence</em><br>for Sales Teams</h2>
+      <div class="product-eyebrow">Live Product · Founder & Builder</div>
+      <h2 class="product-heading">Flintel —<br><em>Signal Intelligence</em><br>for Fintech & FX</h2>
       <p class="product-sub">
-        A real-time AI system that monitors Twitter/X, Reddit, Telegram, and competitor reviews continuously. The moment a buyer posts publicly about a problem your product solves, Flintel scores their intent, identifies who they are, writes the outreach script, and delivers everything to Slack and HubSpot — in under 90 seconds.
+        This isn't a case study — it's a real, live product in production today, currently deployed with a Canadian fintech expanding to 25 markets. Flintel monitors Twitter/X, Reddit, Telegram, and competitor reviews around the clock. The moment a buyer posts publicly about a cross-border payment or FX problem your product solves, Flintel scores their intent, identifies who they are, drafts the outreach message, and delivers the full signal to Slack and HubSpot — in under 90 seconds.
       </p>
       <ul class="product-features">
-        <li>Monitors Twitter/X, Reddit, Telegram & competitor reviews 24/7</li>
-        <li>Intent scoring 0–10 with buyer identification and profile enrichment</li>
-        <li>AI-generated outreach script delivered with each signal</li>
-        <li>Slack + HubSpot delivery in under 90 seconds — not a concept, already deployed</li>
-        <li>Built for financial services, payments, travel, and any business where buyers signal publicly before they decide</li>
+        <li>Three-layer pipeline — Listener, Filter, Intelligence — with a two-stage filter that clears 95% of noise before AI ever touches it</li>
+        <li>Intent scoring 0–10 with buyer identification, routed automatically: instant alert, daily digest, silent watchlist, or discarded</li>
+        <li>AI-generated, ready-to-send outreach script attached to every qualified signal</li>
+        <li>Slack + HubSpot delivery in under 90 seconds — live in production, not a concept</li>
+        <li>Built for FX & remittance platforms, crypto exchanges, and B2B payments companies — anywhere buyers vent publicly before they switch</li>
       </ul>
       <div class="product-cta">
-        <a href="https://getflintel.com" target="_blank" class="p-btn-solid">Visit Flintel →</a>
+        <a href="https://getflintel.com" target="_blank" class="p-btn-solid">Visit the Live Product →</a>
         <a href="#contact" class="p-btn-ghost">Discuss a Use Case</a>
       </div>
     </div>
@@ -828,7 +845,7 @@ footer {
             <span class="signal-platform">Twitter/X</span>
             <span>· 23s ago</span>
           </div>
-          <p class="signal-text">"Our bank just blocked our international wire again. We need a better cross-border payment solution immediately."</p>
+          <p class="signal-text">Founder flagged a blocked cross-border wire payment and asked for a better corridor solution.</p>
           <div class="signal-score-row">
             <span class="signal-score">Intent Score <span class="score-val">9.2</span></span>
             <span class="signal-action">Script Ready ✓</span>
@@ -839,7 +856,7 @@ footer {
             <span class="signal-platform">Reddit</span>
             <span>· 61s ago</span>
           </div>
-          <p class="signal-text">"Third failed booking this month. Looking for a travel platform that actually works for group reservations."</p>
+          <p class="signal-text">Business owner venting about a failed group booking, actively asking for alternatives.</p>
           <div class="signal-score-row">
             <span class="signal-score">Intent Score <span class="score-val">8.7</span></span>
             <span class="signal-action">Sent to Slack ✓</span>
@@ -897,6 +914,7 @@ footer {
         <div class="project-links">
           <a href="https://ecommerce-ai-assistant.onrender.com/" target="_blank" class="link-btn l-solid">Live App →</a>
           <a href="https://ai-commerce-agent-xqvh.onrender.com/" target="_blank" class="link-btn l-ghost">Info Site</a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7489345142496329728/" target="_blank" class="link-btn l-ghost">How It Works →</a>
         </div>
       </div>
     </div>
@@ -945,6 +963,30 @@ footer {
         </ul>
         <div class="project-links">
           <a href="https://rag-technical-reference.onrender.com/" target="_blank" class="link-btn l-solid">Live App →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Travelfy -->
+    <div class="project-card">
+      <div class="project-visual pv-travel">
+        <div class="pv-grid"></div>
+        <span class="pv-icon">✈️</span>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="badge b-green">Live</span>
+          <span class="badge b-muted">FastAPI + OpenAI</span>
+        </div>
+        <h3>Travelfy — AI Travel Concierge</h3>
+        <p>A conversational AI travel concierge that plans trips end-to-end through natural chat — understanding traveler intent and generating tailored recommendations and itineraries in real time, backed by the same FastAPI + OpenAI + MongoDB architecture as the e-commerce assistant.</p>
+        <ul class="feature-list">
+          <li>Conversational trip planning with contextual, multi-turn follow-ups</li>
+          <li>Session memory for ongoing traveler preferences</li>
+          <li>MongoDB Atlas persistence on Render Cloud</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://travel-ai-assistant-x7hw.onrender.com/" target="_blank" class="link-btn l-solid">Live App →</a>
         </div>
       </div>
     </div>
@@ -1066,6 +1108,54 @@ footer {
       </div>
       <span class="cert-badge">Verified ✓</span>
     </div>
+    <div class="cert-row">
+      <span class="cert-index">04</span>
+      <div class="cert-body">
+        <h4>Claude 101</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">05</span>
+      <div class="cert-body">
+        <h4>Introduction to Claude Cowork</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">06</span>
+      <div class="cert-body">
+        <h4>AI Fluency: Framework & Foundations</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">07</span>
+      <div class="cert-body">
+        <h4>AI Fluency: AI Capabilities & Limitations</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">08</span>
+      <div class="cert-body">
+        <h4>AI Fluency for Students</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">09</span>
+      <div class="cert-body">
+        <h4>Backend AI Engineering Internship</h4>
+        <p>FlyRank AI · Engaged July 2026</p>
+      </div>
+      <span class="cert-badge">Ongoing ✓</span>
+    </div>
   </div>
 </section>
 
@@ -1094,7 +1184,17 @@ footer {
   <div class="footer-left">
     Designed & built by <strong>Muhammad Waris Ali</strong> · AI Backend Engineer · Karachi, PK
   </div>
-  <div class="footer-right">© 2026 All rights reserved</div>
+  <div class="footer-right">
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/warisali-dev/" target="_blank" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/wwaris.tech.ai/" target="_blank" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
+    <span>© 2026 All rights reserved</span>
+  </div>
 </footer>
 
 <script>
@@ -1119,7 +1219,7 @@ const secObs = new IntersectionObserver(entries => {
     if (e.isIntersecting) {
       navLinks.forEach(l => l.style.color = '');
       const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
-      if (a) a.style.color = 'var(--amber)';
+      if (a) a.style.color = 'var(--blue)';
     }
   });
 }, { threshold: 0.35 });
