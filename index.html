@@ -101,7 +101,7 @@ nav.scrolled {
 /* HERO */
 .hero {
   min-height: 100svh;
-  display: grid; grid-template-columns: 1fr;
+  display: grid; grid-template-columns: 1.15fr 0.85fr;
   align-items: stretch;
   padding-top: 92px;
   border-bottom: 1px solid var(--line);
@@ -109,8 +109,9 @@ nav.scrolled {
   z-index: 1;
 }
 .hero-left {
-  padding: 64px 6% 80px;
+  padding: 64px 5% 64px 6%;
   display: flex; flex-direction: column; justify-content: center;
+  border-right: 1px solid var(--line);
 }
 .hero-eyebrow {
   font-family: 'IBM Plex Mono', monospace;
@@ -170,14 +171,7 @@ nav.scrolled {
 }
 .btn-outline:hover { border-color: var(--amber); color: var(--amber); }
 
-/* Hero right — signal scope panel (signature element) */
-.hero-right {
-  position: relative; display: flex; flex-direction: column;
-  animation: fadeUp .6s .5s both;
-  background:
-    radial-gradient(circle at 50% 42%, rgba(255,198,39,0.07), transparent 60%),
-    var(--bg2);
-}
+/* Signal scope (radar) — shared styles, used inside the Flintel section */
 .scope-wrap {
   flex: 1; position: relative; display: flex; align-items: center; justify-content: center;
   padding: 20px;
@@ -198,7 +192,7 @@ nav.scrolled {
 @keyframes blipPulse { 0%,100% { opacity: .25; r: 3; } 50% { opacity: 1; r: 5; } }
 .scope-label {
   font-family: 'IBM Plex Mono', monospace; font-size: 9px; fill: var(--text-3);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05em; text-anchor: middle;
 }
 .hero-log {
   padding: 20px 28px 26px;
@@ -338,6 +332,54 @@ section { padding: 100px 6%; position: relative; z-index: 1; }
   transition: border-color .2s, color .2s;
 }
 .p-btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
+
+/* Hero right — portrait panel */
+.hero-right {
+  position: relative; display: flex;
+  animation: fadeUp .6s .5s both;
+  background: var(--bg2);
+  overflow: hidden;
+}
+.hero-portrait {
+  position: relative; width: 100%; height: 100%;
+  min-height: 460px;
+}
+.hero-portrait img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center 18%;
+  filter: grayscale(85%) contrast(1.08) brightness(0.95);
+  display: block;
+}
+.hero-portrait::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: linear-gradient(180deg, rgba(10,10,12,0.15) 0%, rgba(10,10,12,0.0) 30%, rgba(10,10,12,0.55) 100%),
+              linear-gradient(90deg, rgba(10,10,12,0.65) 0%, rgba(10,10,12,0) 22%);
+}
+.hero-portrait::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,198,39,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,198,39,0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mix-blend-mode: overlay;
+}
+.hero-portrait-tag {
+  position: absolute; left: 24px; bottom: 24px; z-index: 4;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--amber);
+  display: flex; align-items: center; gap: 8px;
+}
+.hero-portrait-tag::before {
+  content: ''; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--amber); box-shadow: 0 0 6px var(--amber);
+}
+.hero-portrait-frame {
+  position: absolute; top: 24px; right: 24px; bottom: 24px; left: 24px;
+  border: 1px solid rgba(255,198,39,0.35); z-index: 4; pointer-events: none;
+}
 
 /* Flintel radar panel */
 .radar-panel {
@@ -713,6 +755,14 @@ footer {
       <a href="Muhammad_Waris_Resume%20(2).pdf" target="_blank" class="btn-outline">Download Resume ↓</a>
     </div>
   </div>
+
+  <div class="hero-right">
+    <div class="hero-portrait">
+      <img src="portrait_photo.png" alt="Muhammad Waris">
+      <div class="hero-portrait-frame"></div>
+      <div class="hero-portrait-tag">Muhammad Waris · Karachi, PK</div>
+    </div>
+  </div>
 </section>
 
 <hr class="sep">
@@ -834,11 +884,11 @@ footer {
           <circle class="scope-blip b3" cx="250" cy="290" r="4" fill="#FFC627"/>
           <circle class="scope-blip" cx="110" cy="150" r="4" fill="#4FE3A3" style="animation-delay:.4s"/>
           <circle class="scope-blip" cx="200" cy="330" r="4" fill="#FFC627" style="animation-delay:1.3s"/>
-          <text class="scope-label" x="270" y="140">X/TWITTER</text>
-          <text class="scope-label" x="140" y="250">REDDIT</text>
-          <text class="scope-label" x="250" y="280">TELEGRAM</text>
-          <text class="scope-label" x="55" y="150">FACEBOOK</text>
-          <text class="scope-label" x="163" y="345">LINKEDIN</text>
+          <text class="scope-label" x="270" y="132">X/TWITTER</text>
+          <text class="scope-label" x="140" y="280">REDDIT</text>
+          <text class="scope-label" x="250" y="312">TELEGRAM</text>
+          <text class="scope-label" x="110" y="132">FACEBOOK</text>
+          <text class="scope-label" x="200" y="352">LINKEDIN</text>
           <circle cx="200" cy="200" r="3" fill="#F5F4F0"/>
         </svg>
       </div>
