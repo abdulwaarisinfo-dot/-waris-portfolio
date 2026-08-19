@@ -58,15 +58,16 @@ body::before {
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 500;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 24px 6%;
+  padding: 20px 6%;
+  background: rgba(10,10,12,0.86);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
   transition: background .4s, border-color .4s, padding .3s;
-  border-bottom: 1px solid transparent;
 }
 nav.scrolled {
-  background: rgba(10,10,12,0.88);
-  backdrop-filter: blur(16px);
-  border-color: var(--line);
-  padding: 15px 6%;
+  background: rgba(10,10,12,0.96);
+  padding: 14px 6%;
 }
 .nav-logo {
   font-family: 'Archivo Black', sans-serif;
@@ -335,50 +336,45 @@ section { padding: 100px 6%; position: relative; z-index: 1; }
 
 /* Hero right — portrait panel */
 .hero-right {
-  position: relative; display: flex;
+  position: relative; display: flex; align-items: center; justify-content: center;
   animation: fadeUp .6s .5s both;
   background: var(--bg2);
-  overflow: hidden;
+  padding: 64px 48px;
 }
 .hero-portrait {
-  position: relative; width: 100%; height: 100%;
-  min-height: 460px;
+  position: relative;
+  width: min(360px, 100%);
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--line2);
+  overflow: hidden;
+  background: var(--bg);
 }
 .hero-portrait img {
   width: 100%; height: 100%; object-fit: cover;
-  object-position: center 18%;
-  filter: grayscale(85%) contrast(1.08) brightness(0.95);
+  object-position: center 22%;
+  filter: grayscale(80%) contrast(1.06) brightness(0.97);
   display: block;
 }
 .hero-portrait::before {
   content: '';
   position: absolute; inset: 0; z-index: 2; pointer-events: none;
-  background: linear-gradient(180deg, rgba(10,10,12,0.15) 0%, rgba(10,10,12,0.0) 30%, rgba(10,10,12,0.55) 100%),
-              linear-gradient(90deg, rgba(10,10,12,0.65) 0%, rgba(10,10,12,0) 22%);
+  background: linear-gradient(180deg, rgba(10,10,12,0) 55%, rgba(10,10,12,0.55) 100%);
 }
 .hero-portrait::after {
   content: '';
   position: absolute; inset: 0; z-index: 3; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255,198,39,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,198,39,0.05) 1px, transparent 1px);
-  background-size: 30px 30px;
-  mix-blend-mode: overlay;
+  border: 1px solid rgba(255,198,39,0.28);
 }
 .hero-portrait-tag {
-  position: absolute; left: 24px; bottom: 24px; z-index: 4;
+  position: absolute; left: 18px; bottom: 16px; z-index: 4;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase;
+  font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--amber);
   display: flex; align-items: center; gap: 8px;
 }
 .hero-portrait-tag::before {
   content: ''; width: 5px; height: 5px; border-radius: 50%;
   background: var(--amber); box-shadow: 0 0 6px var(--amber);
-}
-.hero-portrait-frame {
-  position: absolute; top: 24px; right: 24px; bottom: 24px; left: 24px;
-  border: 1px solid rgba(255,198,39,0.35); z-index: 4; pointer-events: none;
 }
 
 /* Flintel radar panel */
@@ -699,7 +695,7 @@ footer {
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; }
   .hero-left { border-right: none; border-bottom: 1px solid var(--line); }
-  .hero-right { min-height: 420px; }
+  .hero-right { padding: 40px 6% 56px; }
   .arch-top { grid-template-columns: 1fr; }
   .arch-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: 1fr; }
@@ -759,7 +755,6 @@ footer {
   <div class="hero-right">
     <div class="hero-portrait">
       <img src="portrait_photo.png" alt="Muhammad Waris">
-      <div class="hero-portrait-frame"></div>
       <div class="hero-portrait-tag">Muhammad Waris · Karachi, PK</div>
     </div>
   </div>
