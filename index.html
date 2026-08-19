@@ -188,8 +188,6 @@ nav.scrolled {
 }
 @keyframes sweep { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
 .scope-blip { animation: blipPulse 2.6s ease-in-out infinite; }
-.scope-blip.b2 { animation-delay: .9s; }
-.scope-blip.b3 { animation-delay: 1.7s; }
 @keyframes blipPulse { 0%,100% { opacity: .25; r: 3; } 50% { opacity: 1; r: 5; } }
 .scope-label {
   font-family: 'IBM Plex Mono', monospace; font-size: 9px; fill: var(--text-3);
@@ -923,16 +921,16 @@ footer {
               <stop offset="100%" stop-color="#FFC627" stop-opacity="0"/>
             </linearGradient>
           </defs>
-          <circle class="scope-blip" cx="270" cy="150" r="4" fill="#FFC627"/>
-          <circle class="scope-blip b2" cx="140" cy="260" r="4" fill="#4FE3A3"/>
-          <circle class="scope-blip b3" cx="250" cy="290" r="4" fill="#FFC627"/>
-          <circle class="scope-blip" cx="110" cy="150" r="4" fill="#4FE3A3" style="animation-delay:.4s"/>
-          <circle class="scope-blip" cx="200" cy="330" r="4" fill="#FFC627" style="animation-delay:1.3s"/>
-          <text class="scope-label" x="270" y="132">X/TWITTER</text>
-          <text class="scope-label" x="140" y="280">REDDIT</text>
-          <text class="scope-label" x="250" y="312">TELEGRAM</text>
-          <text class="scope-label" x="110" y="132">FACEBOOK</text>
-          <text class="scope-label" x="200" y="352">LINKEDIN</text>
+          <circle class="scope-blip" cx="200" cy="70" r="4" fill="#FFC627" style="animation-delay:0s"/>
+          <circle class="scope-blip" cx="324" cy="160" r="4" fill="#4FE3A3" style="animation-delay:.5s"/>
+          <circle class="scope-blip" cx="276" cy="305" r="4" fill="#FFC627" style="animation-delay:1s"/>
+          <circle class="scope-blip" cx="124" cy="305" r="4" fill="#4FE3A3" style="animation-delay:1.5s"/>
+          <circle class="scope-blip" cx="76" cy="160" r="4" fill="#FFC627" style="animation-delay:2s"/>
+          <text class="scope-label" x="200" y="45">X/TWITTER</text>
+          <text class="scope-label" x="347" y="152">REDDIT</text>
+          <text class="scope-label" x="291" y="330">TELEGRAM</text>
+          <text class="scope-label" x="109" y="330">FACEBOOK</text>
+          <text class="scope-label" x="53" y="152">LINKEDIN</text>
           <circle cx="200" cy="200" r="3" fill="#F5F4F0"/>
         </svg>
       </div>
