@@ -271,6 +271,37 @@ section { padding: 100px 6%; position: relative; z-index: 1; }
   border: 1px solid var(--line2);
 }
 
+/* SERVICES */
+#services { background: var(--panel); }
+.services-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  border: 1px solid var(--line); gap: 1px; background: var(--line);
+}
+.service-card {
+  background: var(--panel); padding: 36px 32px;
+  transition: background .22s; position: relative; overflow: hidden;
+}
+.service-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--amber);
+  transform: scaleX(0); transform-origin: left; transition: transform .28s;
+}
+.service-card:hover { background: var(--panel2); }
+.service-card:hover::after { transform: scaleX(1); }
+.service-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.64rem; color: var(--amber);
+  letter-spacing: 0.1em; margin-bottom: 16px; display: block;
+}
+.service-card h3 {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+  font-size: 1.15rem; color: var(--white);
+  margin-bottom: 12px; letter-spacing: -0.005em;
+}
+.service-card p { font-size: 0.85rem; color: var(--text-2); line-height: 1.75; }
+.services-cta { margin-top: 40px; }
+
 /* PRODUCT SPOTLIGHT — Flintel */
 #product { background: var(--panel); }
 .product-inner {
@@ -756,6 +787,7 @@ footer {
   .nav-links { display: none; }
   section { padding: 76px 5%; }
   .skills-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
   .arch-grid { grid-template-columns: 1fr; }
   footer { flex-direction: column; gap: 8px; text-align: center; }
   .flintel-stat-row { grid-template-columns: 1fr; }
@@ -770,6 +802,7 @@ footer {
   <div class="nav-logo">Waris<span>.</span></div>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#product">Flintel</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#arch">Architecture</a></li>
@@ -876,6 +909,39 @@ footer {
         <span class="tag">CI/CD</span>
       </div>
     </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="s-eyebrow">What I Offer</div>
+  <div class="s-heading">Ways We Can <em>Work Together</em></div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <span class="service-num">01</span>
+      <h3>AI Websites & Web Apps</h3>
+      <p>Want an AI-powered website or web app for your business? I design and build it end-to-end — from the first line of code to a live, production-ready product.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-num">02</span>
+      <h3>Business Automation</h3>
+      <p>Automate the repetitive parts of your business — customer replies, bookings, order flows — with AI chatbots and WhatsApp automation that run 24/7.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-num">03</span>
+      <h3>Backend Engineering</h3>
+      <p>Need a backend engineer on your team or project? I build APIs, databases, and system architecture that scale with your product, on contract or full-time.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-num">04</span>
+      <h3>Upgrade an Existing Website</h3>
+      <p>Already have a website or app? I can modify it, add new features, integrate AI, or fix and rebuild parts of it without disrupting what already works.</p>
+    </div>
+  </div>
+  <div class="services-cta">
+    <a href="#contact" class="btn-primary">Start a Project →</a>
   </div>
 </section>
 
