@@ -577,6 +577,21 @@ section { padding: 100px 6%; position: relative; z-index: 1; }
 
 /* CERTIFICATIONS */
 #certifications { background: var(--bg); }
+.cert-heading-row {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  flex-wrap: wrap; gap: 18px; margin-bottom: 16px;
+}
+.cert-link-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--amber); text-decoration: none;
+  border: 1px solid var(--amber-bdr); background: var(--amber-bg);
+  padding: 11px 20px; border-radius: var(--r);
+  transition: background .2s, border-color .2s;
+  white-space: nowrap;
+}
+.cert-link-btn:hover { background: rgba(255,198,39,0.16); border-color: var(--amber); }
 .cert-list {
   display: flex; flex-direction: column;
   border: 1px solid var(--line);
@@ -606,6 +621,39 @@ section { padding: 100px 6%; position: relative; z-index: 1; }
   color: var(--signal); background: var(--signal-bg);
   border: 1px solid var(--signal-bdr); flex-shrink: 0;
 }
+
+/* COMMUNITY */
+#community { background: var(--panel); }
+.community-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+.community-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--signal);
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-bottom: 20px;
+}
+.community-eyebrow::before, .community-eyebrow::after { content: ''; width: 22px; height: 1px; background: var(--signal); }
+.community-heading {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  line-height: 1.05; letter-spacing: -0.01em; text-transform: uppercase;
+  color: var(--white); margin-bottom: 20px;
+}
+.community-heading em { font-style: normal; color: var(--amber); }
+.community-sub {
+  font-size: 0.94rem; color: var(--text-2); line-height: 1.85;
+  margin-bottom: 34px;
+}
+.community-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--amber); color: #0A0A0C;
+  padding: 14px 28px; border-radius: var(--r);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; text-decoration: none;
+  transition: background .2s, transform .2s;
+}
+.community-btn:hover { background: #FFD966; transform: translateY(-2px); }
 
 /* CONTACT */
 #contact { background: var(--panel); }
@@ -728,6 +776,7 @@ footer {
     <li><a href="#projects">Projects</a></li>
     <li><a href="#arch">Architecture</a></li>
     <li><a href="#certifications">Certs</a></li>
+    <li><a href="#community">Community</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-avail">Open to Work</div>
@@ -1143,8 +1192,11 @@ footer {
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="s-eyebrow">Credentials</div>
-  <div class="s-heading"><em>Certifications</em></div>
-  <div class="cert-list reveal">
+  <div class="cert-heading-row">
+    <div class="s-heading" style="margin-bottom:0"><em>Certifications</em></div>
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7494454713711509504/" target="_blank" class="cert-link-btn">View Certificate Post →</a>
+  </div>
+  <div class="cert-list reveal" style="margin-top:40px">
     <div class="cert-row">
       <span class="cert-index">01</span>
       <div class="cert-body">
@@ -1217,6 +1269,140 @@ footer {
       </div>
       <span class="cert-badge">Ongoing ✓</span>
     </div>
+    <div class="cert-row">
+      <span class="cert-index">10</span>
+      <div class="cert-body">
+        <h4>AI Fluency for Small Businesses</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">11</span>
+      <div class="cert-body">
+        <h4>AI Fluency for Educators</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">12</span>
+      <div class="cert-body">
+        <h4>Teaching the AI Fluency Framework</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">13</span>
+      <div class="cert-body">
+        <h4>AI Fluency for Nonprofits</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">14</span>
+      <div class="cert-body">
+        <h4>AI Fluency for Builders</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">15</span>
+      <div class="cert-body">
+        <h4>Claude Code 101</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">16</span>
+      <div class="cert-body">
+        <h4>Claude Code in Action</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">17</span>
+      <div class="cert-body">
+        <h4>Claude Platform 101</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">18</span>
+      <div class="cert-body">
+        <h4>Claude with the Anthropic API</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">19</span>
+      <div class="cert-body">
+        <h4>Introduction to Model Context Protocol</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">20</span>
+      <div class="cert-body">
+        <h4>Model Context Protocol: Advanced Topics</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">21</span>
+      <div class="cert-body">
+        <h4>Introduction to Agent Skills</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">22</span>
+      <div class="cert-body">
+        <h4>Introduction to Subagents</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">23</span>
+      <div class="cert-body">
+        <h4>Claude with Amazon Bedrock</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">24</span>
+      <div class="cert-body">
+        <h4>Claude with Google Vertex AI</h4>
+        <p>Anthropic · Completed 2026</p>
+      </div>
+      <span class="cert-badge">Verified ✓</span>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- COMMUNITY -->
+<section id="community">
+  <div class="community-inner reveal">
+    <div class="community-eyebrow">Stay Connected</div>
+    <h2 class="community-heading">Join Our <em>Community</em></h2>
+    <p class="community-sub">
+      A space for builders working on AI backends, RAG systems, and automation to swap notes, share what's working, and learn from each other.
+    </p>
+    <a href="https://www.linkedin.com/groups/39551002/" target="_blank" class="community-btn">Join the LinkedIn Group →</a>
   </div>
 </section>
 
