@@ -99,6 +99,22 @@ nav.scrolled {
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
 
+/* NAV TOGGLE (mobile) */
+.nav-toggle {
+  display: none;
+  flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 34px; height: 34px;
+  background: transparent; border: 1px solid var(--line2);
+  border-radius: var(--r); cursor: pointer; z-index: 600;
+}
+.nav-toggle span {
+  display: block; width: 16px; height: 1.5px; background: var(--white);
+  transition: transform .25s, opacity .25s;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
 /* HERO */
 .hero {
   min-height: 100svh;
@@ -557,6 +573,8 @@ section { padding: 100px 6%; position: relative; z-index: 1; }
   font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem;
   flex-shrink: 0; margin-top: 2px;
 }
+.feature-list li.highlight { color: var(--white); }
+.feature-list li.highlight::before { content: '★'; color: var(--amber); font-size: 0.72rem; }
 .project-links {
   margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;
   padding-top: 16px; border-top: 1px solid var(--line);
@@ -782,16 +800,70 @@ footer {
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .product-inner { grid-template-columns: 1fr; gap: 48px; }
 }
+
+@media (max-width: 860px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: fixed; top: 0; right: 0; height: 100svh; width: min(78vw, 320px);
+    background: rgba(10,10,12,0.98); backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    flex-direction: column; align-items: flex-start; justify-content: center;
+    gap: 26px; padding: 32px 34px;
+    border-left: 1px solid var(--line);
+    transform: translateX(100%); transition: transform .32s ease;
+    z-index: 550;
+  }
+  .nav-links.open { transform: translateX(0); }
+  .nav-links a { font-size: 0.82rem; letter-spacing: 0.1em; }
+  .nav-avail { display: none; }
+}
+
 @media (max-width: 640px) {
+  html { font-size: 15px; }
   nav { padding: 16px 5%; }
-  .nav-links { display: none; }
-  section { padding: 76px 5%; }
+  section { padding: 64px 5%; }
+  .s-heading { margin-bottom: 36px; }
+
+  .hero { padding-top: 78px; }
+  .hero-left { padding: 44px 6% 40px; }
+  .hero-desc { max-width: 100%; }
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta a { justify-content: center; text-align: center; }
+  .hero-right { padding: 32px 6% 44px; }
+  .hero-portrait { width: min(280px, 78vw); }
+
   .skills-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .arch-grid { grid-template-columns: 1fr; }
-  footer { flex-direction: column; gap: 8px; text-align: center; }
+
+  .product-inner { gap: 32px; }
+  .product-cta { flex-direction: column; align-items: stretch; }
+  .product-cta a { justify-content: center; text-align: center; }
+
+  .project-card.featured .project-body h3 { font-size: 1.3rem; }
+  .project-links { flex-direction: column; }
+  .project-links a { justify-content: center; text-align: center; }
+  .pixup-row { flex-direction: column; }
+  .pixup-row .project-visual { width: 100% !important; min-height: 170px; }
+
+  .cert-row { padding: 16px 18px; gap: 14px; flex-wrap: wrap; }
+  .cert-body h4 { font-size: 0.82rem; line-height: 1.4; }
+  .cert-badge { margin-left: auto; }
+  .cert-heading-row { flex-direction: column; align-items: flex-start; }
+  .cert-link-btn { width: 100%; justify-content: center; }
+
+  .contact-buttons { flex-direction: column; align-items: stretch; }
+  .contact-buttons a { justify-content: center; text-align: center; }
+  .contact-heading { font-size: clamp(2.6rem, 15vw, 4.4rem); }
+
+  footer { flex-direction: column; gap: 10px; text-align: center; }
+  .footer-right { flex-direction: column; gap: 10px; }
   .flintel-stat-row { grid-template-columns: 1fr; }
   .flintel-stat { border-right: none; border-bottom: 1px solid var(--line); }
+}
+
+@media (max-width: 400px) {
+  .hero-name { font-size: clamp(2.5rem, 12vw, 3.4rem); }
 }
 </style>
 </head>
@@ -800,7 +872,7 @@ footer {
 <!-- NAV -->
 <nav id="main-nav">
   <div class="nav-logo">Waris<span>.</span></div>
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-links">
     <li><a href="#skills">Skills</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#product">Flintel</a></li>
@@ -811,6 +883,9 @@ footer {
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-avail">Open to Work</div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -1084,6 +1159,7 @@ footer {
           <li>WebSocket-driven real-time interface — zero HTTP handshake overhead per message</li>
           <li>Behavioral analytics pipeline for continuous ranking calibration</li>
           <li>Deployed live on Render Cloud with MongoDB Atlas persistence</li>
+          <li class="highlight">Fully custom-built and trained on your own business data — adaptable beyond e-commerce to clinics, coaching centers, and any business ready to shape it around their exact workflow</li>
         </ul>
         <div class="project-links">
           <a href="https://ecommerce-ai-assistant-8qlj.onrender.com" target="_blank" class="link-btn l-solid">Live App →</a>
@@ -1114,6 +1190,7 @@ footer {
           <li>Runs 24/7, handling reservations and orders around the clock</li>
           <li>Built to process 100+ concurrent orders without missing a beat</li>
           <li>Extends beyond WhatsApp to handle email confirmations and follow-ups</li>
+          <li class="highlight">Fully custom-built and trained on your own business data — extendable to clinics, coaching centers, and any business ready to shape it around their own workflow</li>
         </ul>
         <div class="project-links">
           <a href="https://static-landing-byl2.onrender.com" target="_blank" class="link-btn l-solid">CRM Dashboard →</a>
@@ -1521,6 +1598,22 @@ const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 });
+
+const navToggle = document.getElementById('nav-toggle');
+const navLinksEl = document.getElementById('nav-links');
+navToggle.addEventListener('click', () => {
+  const isOpen = navLinksEl.classList.toggle('open');
+  navToggle.classList.toggle('open', isOpen);
+  navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+navLinksEl.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinksEl.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
 const revEls = document.querySelectorAll('.reveal');
 const revObs = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
