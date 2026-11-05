@@ -878,6 +878,10 @@ footer {
 .cert-list.compact .cert-row { padding: 12px 28px; }
 .cert-list.compact .cert-body { display: flex; justify-content: space-between; align-items: baseline; gap: 6px 20px; flex-wrap: wrap; }
 .cert-list.compact .cert-body p { margin-top: 0; }
+.cert-toggle-row { display: flex; justify-content: center; margin-top: 28px; }
+.cert-toggle { cursor: pointer; }
+.cert-toggle:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+@media (max-width: 640px) { .cert-toggle { width: 100%; justify-content: center; } }
 .cert-body a:hover { text-decoration: underline; }
 </style>
 </head>
@@ -1256,8 +1260,9 @@ footer {
       <span class="cert-badge">Ongoing</span>
     </div>
   </div>
+  <div id="cert-more" hidden>
   <div class="cert-group-title">Anthropic Courses (20)</div>
-  <div class="cert-list compact reveal">
+  <div class="cert-list compact">
     <div class="cert-row">
       <span class="cert-index">04</span>
       <div class="cert-body"><h4>Claude 101</h4><p>Anthropic · Completed 2026</p></div>
@@ -1359,6 +1364,10 @@ footer {
       <span class="cert-badge">Completed</span>
     </div>
   </div>
+  </div>
+  <div class="cert-toggle-row">
+    <button type="button" class="btn-outline cert-toggle" id="cert-toggle" aria-expanded="false" aria-controls="cert-more">View More</button>
+  </div>
 </section>
 
 <hr class="sep">
@@ -1445,6 +1454,18 @@ const secObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.35 });
 sections.forEach(s => secObs.observe(s));
+
+const certToggle = document.getElementById('cert-toggle');
+const certMore = document.getElementById('cert-more');
+if (certToggle && certMore) {
+  certToggle.addEventListener('click', () => {
+    const expand = certMore.hidden;
+    certMore.hidden = !expand;
+    certToggle.setAttribute('aria-expanded', expand ? 'true' : 'false');
+    certToggle.textContent = expand ? 'View Less' : 'View More';
+    if (!expand) certToggle.scrollIntoView({ block: 'nearest' });
+  });
+}
 </script>
 </body>
 </html>
