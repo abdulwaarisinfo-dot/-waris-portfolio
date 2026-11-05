@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Muhammad Waris Ali — AI Product Builder & Backend Engineer</title>
-<meta name="description" content="Muhammad Waris Ali builds AI-powered software products and backend systems in Python. Founder of Flintel, a Reddit buyer-intent research tool, and builder of Writora, a free AI writing assistant.">
+<meta name="description" content="Muhammad Waris Ali builds AI-powered software products and backend systems in Python. Founder of Flintel, a buyer-intent research tool for Reddit and Hacker News, and builder of Writora, a free AI writing assistant.">
 <meta name="author" content="Muhammad Waris Ali">
 <link rel="canonical" href="https://warisdev.is-a.dev/">
 <meta property="og:title" content="Muhammad Waris Ali — AI Product Builder & Backend Engineer">
@@ -874,6 +874,10 @@ footer {
 @media (max-width: 1024px) { .skills-grid .skill-card:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 @media (max-width: 640px) { .skills-grid .skill-card:last-child { grid-column: auto !important; } }
 .cert-body a { color: var(--amber); text-decoration: none; }
+.cert-group-title { font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin: 34px 0 12px; }
+.cert-list.compact .cert-row { padding: 12px 28px; }
+.cert-list.compact .cert-body { display: flex; justify-content: space-between; align-items: baseline; gap: 6px 20px; flex-wrap: wrap; }
+.cert-list.compact .cert-body p { margin-top: 0; }
 .cert-body a:hover { text-decoration: underline; }
 </style>
 </head>
@@ -903,7 +907,7 @@ footer {
     <h1 class="hero-name">Muhammad<br>Waris<br>Ali<span class="accent">.</span></h1>
     <p class="hero-tagline">I build <strong>AI-powered software products</strong> and the backend systems behind them.</p>
     <p class="hero-desc">
-      Founder of <strong style="color:var(--white)">Flintel</strong>, a research tool that finds and classifies buyer-intent conversations on Reddit. Builder of <strong style="color:var(--white)">Writora</strong>, a free AI writing assistant. I work mostly in Python and FastAPI, with MongoDB and LLM APIs.
+      Founder of <strong style="color:var(--white)">Flintel</strong>, a research tool that finds and classifies buyer-intent conversations on Reddit and Hacker News. Builder of <strong style="color:var(--white)">Writora</strong>, a free AI writing assistant. I work mostly in Python and FastAPI, with MongoDB and LLM APIs.
     </p>
     <div class="hero-cta">
       <a href="#product" class="btn-primary">See Flintel →</a>
@@ -997,15 +1001,15 @@ footer {
   <div class="product-inner reveal">
     <div>
       <div class="product-eyebrow">Live Product · Founder &amp; Builder</div>
-      <h2 class="product-heading">Flintel —<br><em>Social Research</em><br>Starting with Reddit</h2>
+      <h2 class="product-heading">Flintel —<br><em>Social Research</em><br>Reddit &amp; Hacker News</h2>
       <p class="product-sub">
-        People often say what they need before they ever talk to a vendor: "alternatives to…", "what do you use for…". Those posts are scattered and slow to triage. Flintel lets you search a brand, product, or topic in plain language and returns the matching Reddit conversations, each linked to its source post and labelled by intent. It is built for founders, marketers, and researchers who want to read what people are actually saying before they act.
+        People often say what they need before they ever talk to a vendor: "alternatives to…", "what do you use for…". Those posts are scattered and slow to triage. Flintel lets you search a brand, product, or topic in plain language and returns the matching conversations from Reddit and Hacker News, each linked to its source post and labelled by intent. It is built for founders, marketers, and researchers who want to read what people are actually saying before they act.
       </p>
       <ul class="product-features">
-        <li>Each result carries a summary, subreddit, date, sentiment, and an intent label (High, Medium, Low, or Uncertain) with a short reason</li>
+        <li>Each result carries a summary, source, date, sentiment, and an intent label (High, Medium, Low, or Uncertain) with a short reason</li>
         <li>A strict definition of "qualified": High requires an explicit purchase step, and rows that can't be verified against the stored post are shown as Uncertain rather than inflated</li>
         <li>Backend I build and maintain: background discovery and collection workers, LLM analysis with structured output, and a shared plus per-user MongoDB data layer</li>
-        <li>Free and paid plans with monthly search credits. Reddit is the only live source today; other platforms are not available yet, and Flintel does not contact anyone on your behalf</li>
+        <li>Free and paid plans with monthly search credits. Reddit and Hacker News are the live sources today; X, LinkedIn, and Facebook are listed as coming soon, and Flintel does not contact anyone on your behalf</li>
       </ul>
       <div class="product-cta">
         <a href="https://getflintel.com" target="_blank" rel="noopener" class="p-btn-solid">Visit Flintel →</a>
@@ -1021,8 +1025,8 @@ footer {
       </div>
       <div class="signal-feed">
         <div class="signal-item">
-          <div class="signal-meta"><span class="signal-platform">Reddit search</span></div>
-          <p class="signal-text">Plain-language search over collected Reddit posts, with a summary and a link to every source post.</p>
+          <div class="signal-meta"><span class="signal-platform">Reddit &amp; Hacker News search</span></div>
+          <p class="signal-text">Plain-language search over collected posts, with a summary and a link to every source post.</p>
           <div class="signal-score-row"><span class="signal-score">Status</span><span class="signal-action">Available</span></div>
         </div>
         <div class="signal-item">
@@ -1037,7 +1041,7 @@ footer {
         </div>
       </div>
       <div class="flintel-stat-row">
-        <div class="flintel-stat"><div class="flintel-stat-num">1</div><div class="flintel-stat-label">Live Source</div></div>
+        <div class="flintel-stat"><div class="flintel-stat-num">2</div><div class="flintel-stat-label">Live Sources</div></div>
         <div class="flintel-stat"><div class="flintel-stat-num">4</div><div class="flintel-stat-label">Intent Labels</div></div>
         <div class="flintel-stat"><div class="flintel-stat-num">3</div><div class="flintel-stat-label">Platforms Planned</div></div>
       </div>
@@ -1197,7 +1201,7 @@ footer {
     <div class="arch-cell">
       <span class="arch-num">01 — Collection</span>
       <h4>Discovery Engine</h4>
-      <p>Multi-threaded background workers find Reddit posts through Google SERP discovery and auto-generated fuzzy keyword matching.</p>
+      <p>Multi-threaded background workers collect Reddit posts through Google SERP discovery and auto-generated fuzzy keyword matching.</p>
     </div>
     <div class="arch-cell">
       <span class="arch-num">02 — Analysis</span>
@@ -1223,23 +1227,136 @@ footer {
 <section id="certifications">
   <div class="s-eyebrow">Credentials</div>
   <div class="cert-heading-row">
-    <div class="s-heading" style="margin-bottom:0"><em>Learning</em></div>
+    <div class="s-heading" style="margin-bottom:0"><em>Certifications</em></div>
     <a href="https://www.linkedin.com/feed/update/urn:li:activity:7494454713711509504/" target="_blank" rel="noopener" class="cert-link-btn">View Certificate Post →</a>
   </div>
-  <div class="cert-list reveal" style="margin-top:40px">
+  <div class="cert-group-title">Backend &amp; Chatbot Development</div>
+  <div class="cert-list compact reveal">
     <div class="cert-row">
       <span class="cert-index">01</span>
-      <div class="cert-body">
-        <h4>Chatbot Development Guide 2025 — Beginner + Advanced</h4>
-        <p>Udemy · Sept 2025 · <a href="https://ude.my/UC-e63d38aa-98b9-434d-970e-d77bfe7eef47" target="_blank" rel="noopener">Certificate</a></p>
-      </div>
+      <div class="cert-body"><h4>Chatbot Development Guide 2025 — Beginner + Advanced</h4><p>Udemy · Eric Roby · Sept 2025 · 10 Hours · <a href="https://ude.my/UC-e63d38aa-98b9-434d-970e-d77bfe7eef47" target="_blank" rel="noopener">Certificate</a></p></div>
+      <span class="cert-badge">Completed</span>
     </div>
     <div class="cert-row">
       <span class="cert-index">02</span>
-      <div class="cert-body">
-        <h4>Anthropic courses — Claude API, MCP, Agent Skills, Claude Code, AI Fluency</h4>
-        <p>Anthropic · 2026 · 20 course completions, listed in the certificate post above</p>
-      </div>
+      <div class="cert-body"><h4>AI / Python Backend Development</h4><p>Udemy · Completed 2025</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">03</span>
+      <div class="cert-body"><h4>API Development & FastAPI Training</h4><p>Online Certification · Completed 2025</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+  </div>
+  <div class="cert-group-title">Engagement</div>
+  <div class="cert-list compact reveal">
+    <div class="cert-row">
+      <span class="cert-index">09</span>
+      <div class="cert-body"><h4>Backend AI Engineering Internship</h4><p>FlyRank AI · Engaged July 2026</p></div>
+      <span class="cert-badge">Ongoing</span>
+    </div>
+  </div>
+  <div class="cert-group-title">Anthropic Courses (20)</div>
+  <div class="cert-list compact reveal">
+    <div class="cert-row">
+      <span class="cert-index">04</span>
+      <div class="cert-body"><h4>Claude 101</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">05</span>
+      <div class="cert-body"><h4>Introduction to Claude Cowork</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">06</span>
+      <div class="cert-body"><h4>AI Fluency: Framework & Foundations</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">07</span>
+      <div class="cert-body"><h4>AI Fluency: AI Capabilities & Limitations</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">08</span>
+      <div class="cert-body"><h4>AI Fluency for Students</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">10</span>
+      <div class="cert-body"><h4>AI Fluency for Small Businesses</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">11</span>
+      <div class="cert-body"><h4>AI Fluency for Educators</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">12</span>
+      <div class="cert-body"><h4>Teaching the AI Fluency Framework</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">13</span>
+      <div class="cert-body"><h4>AI Fluency for Nonprofits</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">14</span>
+      <div class="cert-body"><h4>AI Fluency for Builders</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">15</span>
+      <div class="cert-body"><h4>Claude Code 101</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">16</span>
+      <div class="cert-body"><h4>Claude Code in Action</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">17</span>
+      <div class="cert-body"><h4>Claude Platform 101</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">18</span>
+      <div class="cert-body"><h4>Claude with the Anthropic API</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">19</span>
+      <div class="cert-body"><h4>Introduction to Model Context Protocol</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">20</span>
+      <div class="cert-body"><h4>Model Context Protocol: Advanced Topics</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">21</span>
+      <div class="cert-body"><h4>Introduction to Agent Skills</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">22</span>
+      <div class="cert-body"><h4>Introduction to Subagents</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">23</span>
+      <div class="cert-body"><h4>Claude with Amazon Bedrock</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-index">24</span>
+      <div class="cert-body"><h4>Claude with Google Vertex AI</h4><p>Anthropic · Completed 2026</p></div>
+      <span class="cert-badge">Completed</span>
     </div>
   </div>
 </section>
