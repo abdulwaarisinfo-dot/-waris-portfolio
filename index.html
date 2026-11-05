@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muhammad Waris — AI Backend Engineer</title>
-<meta name="description" content="Muhammad Waris is an AI Backend Engineer based in Karachi, Pakistan, building production-grade AI chatbots, RAG systems, WhatsApp automation, and backend infrastructure. Founder of Flintel, a live signal-intelligence product for fintech sales teams.">
-<meta property="og:title" content="Muhammad Waris — AI Backend Engineer">
-<meta property="og:description" content="Production-grade AI backends, conversational assistants, RAG-powered knowledge systems, and intelligent automation — built for stores, restaurants, travel agencies, salons, clinics, and more.">
+<title>Muhammad Waris Ali — AI Product Builder & Backend Engineer</title>
+<meta name="description" content="Muhammad Waris Ali builds AI-powered software products and backend systems in Python. Founder of Flintel, a Reddit buyer-intent research tool, and builder of Writora, a free AI writing assistant.">
+<meta name="author" content="Muhammad Waris Ali">
+<link rel="canonical" href="https://warisdev.is-a.dev/">
+<meta property="og:title" content="Muhammad Waris Ali — AI Product Builder & Backend Engineer">
+<meta property="og:description" content="Building AI-powered products and the backend systems behind them. Founder of Flintel, builder of Writora.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://warisdev.is-a.dev/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0A0C'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23FFC627' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -246,7 +249,7 @@ section { padding: 100px 6%; position: relative; z-index: 1; }
 .s-heading em { font-style: normal; color: var(--amber); }
 
 /* SKILLS */
-#skills { background: var(--bg); }
+#about { background: var(--bg); }
 .skills-intro {
   max-width: 720px; margin-bottom: 48px; margin-top: -30px;
   font-size: 0.92rem; color: var(--text-2); line-height: 1.85;
@@ -865,6 +868,13 @@ footer {
 @media (max-width: 400px) {
   .hero-name { font-size: clamp(2.5rem, 12vw, 3.4rem); }
 }
+.signal-item.planned { border-left-color: var(--text-3); }
+.signal-action.muted { color: var(--text-3); background: var(--panel); border-color: var(--line); }
+.skills-grid .skill-card:last-child:nth-child(3n+2) { grid-column: span 2; }
+@media (max-width: 1024px) { .skills-grid .skill-card:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+@media (max-width: 640px) { .skills-grid .skill-card:last-child { grid-column: auto !important; } }
+.cert-body a { color: var(--amber); text-decoration: none; }
+.cert-body a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -873,16 +883,14 @@ footer {
 <nav id="main-nav">
   <div class="nav-logo">Waris<span>.</span></div>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#product">Flintel</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#arch">Architecture</a></li>
-    <li><a href="#certifications">Certs</a></li>
-    <li><a href="#community">Community</a></li>
+    <li><a href="#certifications">Credentials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="nav-avail">Open to Work</div>
+  <div class="nav-avail">Building Flintel</div>
   <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -891,132 +899,94 @@ footer {
 <!-- HERO -->
 <section class="hero" id="home" style="padding:0;">
   <div class="hero-left">
-    <div class="hero-eyebrow">AI Backend Engineer · Karachi, Pakistan</div>
-    <h1 class="hero-name">Signal<br>Over<br>Noise<span class="accent">.</span></h1>
-    <p class="hero-tagline">I build the <strong>intelligence layer</strong> behind your product — backends that listen, reason, and act.</p>
+    <div class="hero-eyebrow">AI Product Builder · Backend Engineering</div>
+    <h1 class="hero-name">Muhammad<br>Waris<br>Ali<span class="accent">.</span></h1>
+    <p class="hero-tagline">I build <strong>AI-powered software products</strong> and the backend systems behind them.</p>
     <p class="hero-desc">
-      Production-grade AI backends, conversational assistants, RAG-powered knowledge systems, and automation pipelines — engineered to scale and built to last.
-    </p>
-    <p class="hero-desc" style="margin-top:14px">
-      I also build AI chatbots, abandoned-cart recovery, and WhatsApp automation for businesses across industries — stores, restaurants, travel agencies, salons, clinics, coaching centers, and more.
+      Founder of <strong style="color:var(--white)">Flintel</strong>, a research tool that finds and classifies buyer-intent conversations on Reddit. Builder of <strong style="color:var(--white)">Writora</strong>, a free AI writing assistant. I work mostly in Python and FastAPI, with MongoDB and LLM APIs.
     </p>
     <div class="hero-cta">
       <a href="#product" class="btn-primary">See Flintel →</a>
-      <a href="#projects" class="btn-outline">All Projects</a>
-      <a href="Muhammad_Waris_Resume%20(3).pdf" target="_blank" class="btn-outline">Download Resume ↓</a>
+      <a href="#projects" class="btn-outline">Projects</a>
+      <a href="Muhammad_Waris_Resume%20(3).pdf" target="_blank" rel="noopener" class="btn-outline">Resume ↓</a>
     </div>
   </div>
 
   <div class="hero-right">
     <div class="hero-portrait">
-      <img src="portrait_photo.png" alt="Muhammad Waris">
-      <div class="hero-portrait-tag">Muhammad Waris · Karachi, PK</div>
+      <img src="portrait_photo.png" alt="Portrait of Muhammad Waris Ali">
+      <div class="hero-portrait-tag">Muhammad Waris Ali · Pakistan</div>
     </div>
   </div>
 </section>
 
 <hr class="sep">
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="s-eyebrow">Technical Expertise</div>
+<!-- ABOUT & SKILLS -->
+<section id="about">
+  <div class="s-eyebrow">About</div>
   <div class="s-heading">What I <em>Build</em> With</div>
   <p class="skills-intro">
-    I'm an AI backend engineer based in Karachi, Pakistan, building production-grade conversational AI, RAG pipelines, and automation backends for businesses across fintech, e-commerce, and hospitality. Alongside client work, I'm building <strong>Flintel</strong> — a live signal-intelligence product for fintech sales teams — and completing an AI engineering internship at FlyRank AI.
+    I'm a software developer from Pakistan building AI-powered products and the backend systems behind them. I founded <strong>Flintel</strong> and built <strong>Writora</strong>, and most of my work is designing the data model, wiring in LLM calls, and shipping the result as something people can use. I'm also working through a Backend AI Engineering internship track at FlyRank AI.
   </p>
   <div class="skills-grid reveal">
     <div class="skill-card">
       <span class="skill-num">01 — Backend</span>
       <h3>Backend Engineering</h3>
       <div class="skill-tags">
+        <span class="tag">Python</span>
         <span class="tag">FastAPI</span>
-        <span class="tag">REST APIs</span>
-        <span class="tag">Microservices</span>
-        <span class="tag">JWT Auth</span>
+        <span class="tag">asyncio</span>
+        <span class="tag">REST API design</span>
+        <span class="tag">WebSockets</span>
+        <span class="tag">Background workers</span>
+        <span class="tag">JWT &amp; OAuth 2.0</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <span class="skill-num">02 — AI</span>
+      <h3>AI Integration &amp; Applications</h3>
+      <div class="skill-tags">
+        <span class="tag">Claude API</span>
+        <span class="tag">OpenAI API</span>
+        <span class="tag">Function calling / tool use</span>
+        <span class="tag">Prompt engineering</span>
+        <span class="tag">LLM-based classification</span>
+        <span class="tag">Conversational assistants</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <span class="skill-num">03 — Data</span>
+      <h3>Databases &amp; Data Architecture</h3>
+      <div class="skill-tags">
+        <span class="tag">MongoDB Atlas</span>
+        <span class="tag">Motor (async)</span>
+        <span class="tag">Schema design &amp; indexing</span>
+        <span class="tag">Multi-tenant isolation</span>
+        <span class="tag">Caching</span>
+        <span class="tag">Crash-safe batch processing</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <span class="skill-num">04 — Integrations</span>
+      <h3>APIs &amp; Integrations</h3>
+      <div class="skill-tags">
+        <span class="tag">WhatsApp Business API</span>
+        <span class="tag">Duffel</span>
+        <span class="tag">ClipDrop</span>
+        <span class="tag">Paddle Billing</span>
+        <span class="tag">Resend</span>
         <span class="tag">Webhooks</span>
       </div>
     </div>
     <div class="skill-card">
-      <span class="skill-num">02 — AI/ML</span>
-      <h3>AI & Machine Learning</h3>
+      <span class="skill-num">05 — Infrastructure</span>
+      <h3>Deployment &amp; Infrastructure</h3>
       <div class="skill-tags">
-        <span class="tag">OpenAI API</span>
-        <span class="tag">RAG Systems</span>
-        <span class="tag">LangChain</span>
-        <span class="tag">Prompt Eng.</span>
+        <span class="tag">Render</span>
+        <span class="tag">Git &amp; GitHub</span>
       </div>
     </div>
-    <div class="skill-card">
-      <span class="skill-num">03 — Database</span>
-      <h3>Database & Storage</h3>
-      <div class="skill-tags">
-        <span class="tag">MongoDB Atlas</span>
-        <span class="tag">NoSQL Design</span>
-        <span class="tag">Vector Search</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <span class="skill-num">04 — Chatbots</span>
-      <h3>Chatbot Platforms</h3>
-      <div class="skill-tags">
-        <span class="tag">WhatsApp API</span>
-        <span class="tag">AI Assistants</span>
-        <span class="tag">WebSockets</span>
-        <span class="tag">Session Memory</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <span class="skill-num">05 — Languages</span>
-      <h3>Languages</h3>
-      <div class="skill-tags">
-        <span class="tag">Python</span>
-        <span class="tag">SQL</span>
-        <span class="tag">Bash</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <span class="skill-num">06 — DevOps</span>
-      <h3>DevOps & Deployment</h3>
-      <div class="skill-tags">
-        <span class="tag">Git</span>
-        <span class="tag">GitHub</span>
-        <span class="tag">Render Cloud</span>
-        <span class="tag">CI/CD</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="sep">
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="s-eyebrow">What I Offer</div>
-  <div class="s-heading">Ways We Can <em>Work Together</em></div>
-  <div class="services-grid reveal">
-    <div class="service-card">
-      <span class="service-num">01</span>
-      <h3>AI Websites & Web Apps</h3>
-      <p>Want an AI-powered website or web app for your business? I design and build it end-to-end — from the first line of code to a live, production-ready product.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-num">02</span>
-      <h3>Business Automation</h3>
-      <p>Automate the repetitive parts of your business — customer replies, bookings, order flows — with AI chatbots and WhatsApp automation that run 24/7.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-num">03</span>
-      <h3>Backend Engineering</h3>
-      <p>Need a backend engineer on your team or project? I build APIs, databases, and system architecture that scale with your product, on contract or full-time.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-num">04</span>
-      <h3>Upgrade an Existing Website</h3>
-      <p>Already have a website or app? I can modify it, add new features, integrate AI, or fix and rebuild parts of it without disrupting what already works.</p>
-    </div>
-  </div>
-  <div class="services-cta">
-    <a href="#contact" class="btn-primary">Start a Project →</a>
   </div>
 </section>
 
@@ -1026,104 +996,50 @@ footer {
 <section id="product">
   <div class="product-inner reveal">
     <div>
-      <div class="product-eyebrow">Live Product · Founder & Builder</div>
-      <h2 class="product-heading">Flintel —<br><em>Signal Intelligence</em><br>for Fintech & FX</h2>
+      <div class="product-eyebrow">Live Product · Founder &amp; Builder</div>
+      <h2 class="product-heading">Flintel —<br><em>Social Research</em><br>Starting with Reddit</h2>
       <p class="product-sub">
-        This isn't a case study — it's a real, live product in production today, currently deployed with a Canadian fintech expanding to 25 markets. Flintel monitors Twitter/X, Reddit, Telegram, and competitor reviews around the clock. The moment a buyer posts publicly about a cross-border payment or FX problem your product solves, Flintel scores their intent, identifies who they are, drafts the outreach message, and delivers the full signal to Slack and HubSpot — in under 90 seconds.
+        People often say what they need before they ever talk to a vendor: "alternatives to…", "what do you use for…". Those posts are scattered and slow to triage. Flintel lets you search a brand, product, or topic in plain language and returns the matching Reddit conversations, each linked to its source post and labelled by intent. It is built for founders, marketers, and researchers who want to read what people are actually saying before they act.
       </p>
       <ul class="product-features">
-        <li>Three-layer pipeline — Listener, Filter, Intelligence — with a two-stage filter that clears 95% of noise before AI ever touches it</li>
-        <li>Intent scoring 0–10 with buyer identification, routed automatically: instant alert, daily digest, silent watchlist, or discarded</li>
-        <li>AI-generated, ready-to-send outreach script attached to every qualified signal</li>
-        <li>Slack + HubSpot delivery in under 90 seconds — live in production, not a concept</li>
-        <li>Built for FX & remittance platforms, crypto exchanges, and B2B payments companies — anywhere buyers vent publicly before they switch</li>
+        <li>Each result carries a summary, subreddit, date, sentiment, and an intent label (High, Medium, Low, or Uncertain) with a short reason</li>
+        <li>A strict definition of "qualified": High requires an explicit purchase step, and rows that can't be verified against the stored post are shown as Uncertain rather than inflated</li>
+        <li>Backend I build and maintain: background discovery and collection workers, LLM analysis with structured output, and a shared plus per-user MongoDB data layer</li>
+        <li>Free and paid plans with monthly search credits. Reddit is the only live source today; other platforms are not available yet, and Flintel does not contact anyone on your behalf</li>
       </ul>
       <div class="product-cta">
-        <a href="https://getflintel.com" target="_blank" class="p-btn-solid">Visit the Live Product →</a>
-        <a href="#contact" class="p-btn-ghost">Discuss a Use Case</a>
+        <a href="https://getflintel.com" target="_blank" rel="noopener" class="p-btn-solid">Visit Flintel →</a>
+        <a href="https://getflintel.com/find-buyers-on-reddit" target="_blank" rel="noopener" class="p-btn-ghost">How intent labels work</a>
       </div>
     </div>
 
     <div>
-    <div class="radar-panel">
-      <div class="scope-wrap">
-        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-          <circle class="scope-ring dim" cx="200" cy="200" r="180"/>
-          <circle class="scope-ring dim" cx="200" cy="200" r="130"/>
-          <circle class="scope-ring" cx="200" cy="200" r="80"/>
-          <line class="scope-cross" x1="20" y1="200" x2="380" y2="200"/>
-          <line class="scope-cross" x1="200" y1="20" x2="200" y2="380"/>
-          <g class="scope-sweep">
-            <path d="M200,200 L200,20 A180,180 0 0,1 327,73 Z" fill="url(#sweepGrad)" opacity="0.5"/>
-          </g>
-          <defs>
-            <linearGradient id="sweepGrad" x1="200" y1="20" x2="327" y2="73" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#FFC627" stop-opacity="0.55"/>
-              <stop offset="100%" stop-color="#FFC627" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <circle class="scope-blip" cx="200" cy="70" r="4" fill="#FFC627" style="animation-delay:0s"/>
-          <circle class="scope-blip" cx="324" cy="160" r="4" fill="#4FE3A3" style="animation-delay:.5s"/>
-          <circle class="scope-blip" cx="276" cy="305" r="4" fill="#FFC627" style="animation-delay:1s"/>
-          <circle class="scope-blip" cx="124" cy="305" r="4" fill="#4FE3A3" style="animation-delay:1.5s"/>
-          <circle class="scope-blip" cx="76" cy="160" r="4" fill="#FFC627" style="animation-delay:2s"/>
-          <text class="scope-label" x="200" y="45">X/TWITTER</text>
-          <text class="scope-label" x="347" y="152">REDDIT</text>
-          <text class="scope-label" x="291" y="330">TELEGRAM</text>
-          <text class="scope-label" x="109" y="330">FACEBOOK</text>
-          <text class="scope-label" x="53" y="152">LINKEDIN</text>
-          <circle cx="200" cy="200" r="3" fill="#F5F4F0"/>
-        </svg>
-      </div>
-      <div class="hero-log">
-        <div class="hero-log-title">signal_intake.log</div>
-        <div class="hero-log-line"><span class="t">00:00:12</span>listening on 5 channels<span class="g"> · ok</span></div>
-        <div class="hero-log-line"><span class="t">00:00:47</span>signal scored <span class="v">9.2</span> · routed → slack</div>
-        <div class="hero-log-line"><span class="t">00:01:03</span>noise filtered<span class="g"> · 95% cleared</span></div>
-      </div>
-    </div>
     <div class="flintel-panel">
       <div class="flintel-panel-header">
-        <span class="flintel-panel-title">flintel.signal_feed · live</span>
+        <span class="flintel-panel-title">flintel.status</span>
         <span class="flintel-live-badge">Live</span>
       </div>
       <div class="signal-feed">
         <div class="signal-item">
-          <div class="signal-meta">
-            <span class="signal-platform">Twitter/X</span>
-            <span>· 23s ago</span>
-          </div>
-          <p class="signal-text">Founder flagged a blocked cross-border wire payment and asked for a better corridor solution.</p>
-          <div class="signal-score-row">
-            <span class="signal-score">Intent Score <span class="score-val">9.2</span></span>
-            <span class="signal-action">Script Ready ✓</span>
-          </div>
+          <div class="signal-meta"><span class="signal-platform">Reddit search</span></div>
+          <p class="signal-text">Plain-language search over collected Reddit posts, with a summary and a link to every source post.</p>
+          <div class="signal-score-row"><span class="signal-score">Status</span><span class="signal-action">Available</span></div>
         </div>
         <div class="signal-item">
-          <div class="signal-meta">
-            <span class="signal-platform">Reddit</span>
-            <span>· 61s ago</span>
-          </div>
-          <p class="signal-text">Business owner venting about a failed group booking, actively asking for alternatives.</p>
-          <div class="signal-score-row">
-            <span class="signal-score">Intent Score <span class="score-val">8.7</span></span>
-            <span class="signal-action">Sent to Slack ✓</span>
-          </div>
+          <div class="signal-meta"><span class="signal-platform">Intent labels</span></div>
+          <p class="signal-text">High, Medium, Low, or Uncertain, each with a reason and, where one exists, an excerpt from the post.</p>
+          <div class="signal-score-row"><span class="signal-score">Status</span><span class="signal-action">Available</span></div>
+        </div>
+        <div class="signal-item planned">
+          <div class="signal-meta"><span class="signal-platform" style="color:var(--text-2)">X, LinkedIn, Facebook</span></div>
+          <p class="signal-text">Shown as "coming soon" in the app. Not part of the product today.</p>
+          <div class="signal-score-row"><span class="signal-score">Status</span><span class="signal-action muted">Planned</span></div>
         </div>
       </div>
       <div class="flintel-stat-row">
-        <div class="flintel-stat">
-          <div class="flintel-stat-num">&lt;90s</div>
-          <div class="flintel-stat-label">Signal Delivery</div>
-        </div>
-        <div class="flintel-stat">
-          <div class="flintel-stat-num">4</div>
-          <div class="flintel-stat-label">Platforms Monitored</div>
-        </div>
-        <div class="flintel-stat">
-          <div class="flintel-stat-num">24/7</div>
-          <div class="flintel-stat-label">Always Running</div>
-        </div>
+        <div class="flintel-stat"><div class="flintel-stat-num">1</div><div class="flintel-stat-label">Live Source</div></div>
+        <div class="flintel-stat"><div class="flintel-stat-num">4</div><div class="flintel-stat-label">Intent Labels</div></div>
+        <div class="flintel-stat"><div class="flintel-stat-num">3</div><div class="flintel-stat-label">Platforms Planned</div></div>
       </div>
     </div>
     </div>
@@ -1134,42 +1050,37 @@ footer {
 
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="s-eyebrow">Selected Work</div>
-  <div class="s-heading"><em>Production</em> Projects</div>
+  <div class="s-eyebrow">Projects</div>
+  <div class="s-heading">Selected <em>Work</em></div>
 
   <div class="projects-grid reveal">
 
-    <!-- Featured -->
     <div class="project-card featured">
       <div class="project-visual">
         <div class="pv-grid"></div>
-        <span class="pv-icon">🛒</span>
+        <span class="pv-icon">✍️</span>
       </div>
       <div class="project-body">
         <div class="project-meta">
-          <span class="badge b-amber">Featured</span>
+          <span class="badge b-amber">Product</span>
           <span class="badge b-green">Live</span>
-          <span class="badge b-muted">FastAPI + OpenAI</span>
+          <span class="badge b-muted">Builder</span>
         </div>
-        <h3>AI E-Commerce Conversational Assistant</h3>
-        <p>A production-grade conversational commerce backend processing natural language through an 8-layer retrieval intelligence pipeline. Multilingual NLP (Urdu + English), real-time WebSocket communication, composite ranking engine, and persistent session memory.</p>
+        <h3>Writora — Free AI Writing Assistant</h3>
+        <p>Most people know what they want to say but struggle to phrase it in emails, replies, and messages. Writora takes rough text and returns a clearer version, with no account required. It is aimed at students, professionals, and non-native English speakers.</p>
         <ul class="feature-list">
-          <li>Multilingual NLP with Urdu Unicode detection and synonym mapping</li>
-          <li>Multi-dimensional ranking: keyword, category, color, material & trending signals</li>
-          <li>WebSocket-driven real-time interface — zero HTTP handshake overhead per message</li>
-          <li>Behavioral analytics pipeline for continuous ranking calibration</li>
-          <li>Deployed live on Render Cloud with MongoDB Atlas persistence</li>
-          <li class="highlight">Fully custom-built and trained on your own business data — adaptable beyond e-commerce to clinics, coaching centers, and any business ready to shape it around their exact workflow</li>
+          <li>Six tools: improve writing, write a reply, change tone (14 options), simplify, shorten, and fix grammar</li>
+          <li>Dedicated pages for common tasks such as professional emails, follow-ups, and polite refusals</li>
+          <li>Each tool runs on its own task-specific instructions; text is sent to a third-party AI service and, per its privacy page, not stored</li>
+          <li>English works best today; other languages are listed as coming soon</li>
         </ul>
         <div class="project-links">
-          <a href="https://ai-e-commerce-agent-mpqt.onrender.com/" target="_blank" class="link-btn l-solid">Live App →</a>
-          <a href="https://ai-commerce-agent-xqvh.onrender.com/" target="_blank" class="link-btn l-ghost">Info Site</a>
-          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7489345142496329728/" target="_blank" class="link-btn l-ghost">See Demo →</a>
+          <a href="https://writora.live/" target="_blank" rel="noopener" class="link-btn l-solid">Visit Writora →</a>
+          <a href="https://writora.live/about" target="_blank" rel="noopener" class="link-btn l-ghost">About</a>
         </div>
       </div>
     </div>
 
-    <!-- WhatsApp -->
     <div class="project-card">
       <div class="project-visual">
         <div class="pv-grid"></div>
@@ -1177,53 +1088,49 @@ footer {
       </div>
       <div class="project-body">
         <div class="project-meta">
-          <span class="badge b-green">Live</span>
-          <span class="badge b-muted">WhatsApp API</span>
+          <span class="badge b-muted">Demo</span>
+          <span class="badge b-muted">FastAPI · WhatsApp API</span>
         </div>
-        <h3>WhatsApp Restaurant Reservation Bot</h3>
-        <p>End-to-end WhatsApp automation — customers reserve tables, place orders, and receive real-time confirmations entirely through chat. Includes full CRM dashboard for restaurant staff.</p>
+        <h3>WhatsApp Restaurant Assistant</h3>
+        <p>Customers place orders and book tables through WhatsApp chat in English, Urdu, and German. Staff manage everything from an admin CRM.</p>
         <ul class="feature-list">
-          <li>Automated message flows with cancellation handling</li>
-          <li>Staff CRM dashboard with JWT authentication</li>
-          <li>FastAPI + MongoDB Atlas on Render</li>
-          <li>Order handling across multiple languages</li>
-          <li>Runs 24/7, handling reservations and orders around the clock</li>
-          <li>Built to process 100+ concurrent orders without missing a beat</li>
-          <li>Extends beyond WhatsApp to handle email confirmations and follow-ups</li>
-          <li class="highlight">Fully custom-built and trained on your own business data — extendable to clinics, coaching centers, and any business ready to shape it around their own workflow</li>
+          <li>Multi-item order parsing with fuzzy product matching</li>
+          <li>Natural-language reservation booking and delivery-charge logic</li>
+          <li>LLM fallback via function calling for open-ended questions</li>
+          <li>FastAPI, MongoDB, and JWT-protected admin CRM</li>
         </ul>
         <div class="project-links">
-          <a href="https://static-landing-bcqg.onrender.com/" target="_blank" class="link-btn l-solid">CRM Dashboard →</a>
-          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7482168138952761344/" target="_blank" class="link-btn l-ghost">See Demo →</a>
+          <a href="https://static-landing-bcqg.onrender.com/" target="_blank" rel="noopener" class="link-btn l-solid">CRM Dashboard →</a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7482168138952761344/" target="_blank" rel="noopener" class="link-btn l-ghost">Demo post</a>
         </div>
       </div>
     </div>
 
-    <!-- RAG -->
     <div class="project-card">
       <div class="project-visual">
         <div class="pv-grid"></div>
-        <span class="pv-icon">🧠</span>
+        <span class="pv-icon">🛒</span>
       </div>
       <div class="project-body">
         <div class="project-meta">
-          <span class="badge b-green">Live</span>
-          <span class="badge b-muted">RAG + OpenAI</span>
+          <span class="badge b-muted">Demo</span>
+          <span class="badge b-muted">FastAPI · WebSockets</span>
         </div>
-        <h3>RAG-Based AI Knowledge System</h3>
-        <p>Retrieval-Augmented Generation system grounding OpenAI responses in ingested documents. Custom document pipeline with vector-based retrieval for precise, factual answers.</p>
+        <h3>AI Shopping Assistant</h3>
+        <p>A multilingual WebSocket shopping assistant that turns natural-language requests into product searches and ranks the results.</p>
         <ul class="feature-list">
-          <li>Custom ingestion pipeline and vector retrieval</li>
-          <li>OpenAI integration for grounded responses</li>
-          <li>Deployed as live web application</li>
+          <li>English, Urdu, and German with language detection</li>
+          <li>Keyword and intent matching, relevance scoring, and natural-language price parsing</li>
+          <li>Analytics on searches, clicks, and language usage</li>
+          <li>MongoDB Atlas persistence</li>
         </ul>
         <div class="project-links">
-          <a href="https://rag-technical-reference-ntop.onrender.com" target="_blank" class="link-btn l-solid">Live App →</a>
+          <a href="https://ai-e-commerce-agent-mpqt.onrender.com/" target="_blank" rel="noopener" class="link-btn l-solid">Live App →</a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7489345142496329728/" target="_blank" rel="noopener" class="link-btn l-ghost">Demo post</a>
         </div>
       </div>
     </div>
 
-    <!-- Travelfy -->
     <div class="project-card">
       <div class="project-visual">
         <div class="pv-grid"></div>
@@ -1231,43 +1138,40 @@ footer {
       </div>
       <div class="project-body">
         <div class="project-meta">
-          <span class="badge b-green">Live</span>
-          <span class="badge b-muted">FastAPI + OpenAI</span>
+          <span class="badge b-muted">Demo</span>
+          <span class="badge b-muted">FastAPI · MongoDB</span>
         </div>
-        <h3>Travelfy — AI Travel Concierge</h3>
-        <p>A conversational AI travel concierge that plans trips end-to-end through natural chat — understanding traveler intent and generating tailored recommendations and itineraries in real time, backed by the same FastAPI + OpenAI + MongoDB architecture as the e-commerce assistant.</p>
+        <h3>Travelfy — AI Travel Assistant</h3>
+        <p>A conversational assistant that plans trips through chat and keeps context across turns.</p>
         <ul class="feature-list">
-          <li>Conversational trip planning with contextual, multi-turn follow-ups</li>
-          <li>Session memory for ongoing traveler preferences</li>
-          <li>MongoDB Atlas persistence on Render Cloud</li>
+          <li>Multi-turn trip planning with per-session persistence</li>
+          <li>MongoDB Atlas on Render</li>
         </ul>
         <div class="project-links">
-          <a href="https://travel-ai-assistant-x7hw.onrender.com/" target="_blank" class="link-btn l-solid">Live App →</a>
+          <a href="https://travel-ai-assistant-x7hw.onrender.com/" target="_blank" rel="noopener" class="link-btn l-solid">Live App →</a>
         </div>
       </div>
     </div>
 
-    <!-- Pixup8k -->
-    <div class="project-card" style="grid-column:1/-1">
-      <div class="pixup-row">
-        <div class="project-visual" style="width:260px;flex-shrink:0">
-          <div class="pv-grid"></div>
-          <span class="pv-icon">🎬</span>
+    <div class="project-card">
+      <div class="project-visual">
+        <div class="pv-grid"></div>
+        <span class="pv-icon">🖼️</span>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="badge b-green">Live</span>
+          <span class="badge b-muted">FastAPI · ClipDrop</span>
         </div>
-        <div class="project-body">
-          <div class="project-meta">
-            <span class="badge b-muted">API Integration</span>
-            <span class="badge b-green">Live Platform</span>
-          </div>
-          <h3>Pixup8k Platform Integration</h3>
-          <p>Backend API integration for the Pixup8k media platform. REST API development handling media workflows and automated processing pipelines with full authentication and webhook support.</p>
-          <ul class="feature-list">
-            <li>REST API with JWT authentication and webhook support</li>
-            <li>Media workflow automation and processing pipelines</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://pixup8k.com/" target="_blank" class="link-btn l-solid">Live Platform →</a>
-          </div>
+        <h3>PixUp8K — Image Upscaling Backend</h3>
+        <p>PixUp8K is a SaaS for upscaling photos to 4K/8K and removing backgrounds. I built and maintain its backend.</p>
+        <ul class="feature-list">
+          <li>REST API with JWT auth and per-feature usage quotas</li>
+          <li>WebSocket notifications for processing status</li>
+          <li>Image history tracking; ClipDrop API and Pillow for processing</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://pixup8k.com/" target="_blank" rel="noopener" class="link-btn l-solid">Visit PixUp8K →</a>
         </div>
       </div>
     </div>
@@ -1281,54 +1185,34 @@ footer {
 <section id="arch">
   <div class="arch-top reveal">
     <div>
-      <div class="s-eyebrow">System Design Depth</div>
-      <div class="s-heading" style="margin-bottom:0">8-Layer<br><em>Architecture</em></div>
+      <div class="s-eyebrow">System Design</div>
+      <div class="s-heading" style="margin-bottom:0">Flintel<br><em>Architecture</em></div>
     </div>
     <p class="arch-intro">
-      The AI E-Commerce Assistant isn't a wrapped ChatGPT call — it's a <strong>purpose-built retrieval intelligence system</strong>. Eight discrete layers handle everything from WebSocket transport to behavioral analytics, working in concert to deliver sub-second, contextually aware responses across Urdu and English.
+      Flintel is split into <strong>two services</strong>: a background engine that discovers and collects posts, and the user-facing web app that searches and presents them. Keeping collection and analysis out of the request path makes searches fast and lets long batch jobs recover from restarts.
     </p>
   </div>
 
   <div class="arch-grid reveal">
     <div class="arch-cell">
-      <span class="arch-num">01 — Transport</span>
-      <h4>WebSocket Layer</h4>
-      <p>Persistent bidirectional connections. Zero re-handshake overhead per message. Real-time streaming throughout sessions.</p>
+      <span class="arch-num">01 — Collection</span>
+      <h4>Discovery Engine</h4>
+      <p>Multi-threaded background workers find Reddit posts through Google SERP discovery and auto-generated fuzzy keyword matching.</p>
     </div>
     <div class="arch-cell">
-      <span class="arch-num">02 — Runtime</span>
-      <h4>FastAPI Async Layer</h4>
-      <p>ASGI non-blocking I/O. Concurrent session management without threading overhead.</p>
+      <span class="arch-num">02 — Analysis</span>
+      <h4>LLM Intent Labelling</h4>
+      <p>Claude/GPT scoring with function calling for structured output. Rows that can't be matched to a stored post are labelled Uncertain.</p>
     </div>
     <div class="arch-cell">
-      <span class="arch-num">03 — Language</span>
-      <h4>NLP Query Layer</h4>
-      <p>Urdu + English detection. Category, color, material extraction. Intent classification via pattern matching.</p>
+      <span class="arch-num">03 — Data</span>
+      <h4>Shared + Per-User Cache</h4>
+      <p>Async MongoDB (Motor) with a shared cache and per-user data. Batch processing is crash-safe and restartable.</p>
     </div>
     <div class="arch-cell">
-      <span class="arch-num">04 — Memory</span>
-      <h4>Session Memory</h4>
-      <p>Per-session state with multi-turn context. Preference history enables contextual follow-up generation.</p>
-    </div>
-    <div class="arch-cell">
-      <span class="arch-num">05 — Retrieval</span>
-      <h4>Product Retrieval</h4>
-      <p>NLP signal → MongoDB filter translation. Querying against category, color, material, and price constraints.</p>
-    </div>
-    <div class="arch-cell">
-      <span class="arch-num">06 — Scoring</span>
-      <h4>Ranking Engine</h4>
-      <p>6-dimension composite score: keyword relevance, category, color, material, rating, and trending weight.</p>
-    </div>
-    <div class="arch-cell">
-      <span class="arch-num">07 — Telemetry</span>
-      <h4>Analytics Pipeline</h4>
-      <p>Behavioral event stream: searches, clicks, views, price signals, language patterns. Live feedback loop for calibration.</p>
-    </div>
-    <div class="arch-cell">
-      <span class="arch-num">08 — UX</span>
-      <h4>Dynamic Suggestions</h4>
-      <p>Contextual follow-ups based on session state. 2–4 relevant refinements per turn guiding discovery flow.</p>
+      <span class="arch-num">04 — Product</span>
+      <h4>Web App</h4>
+      <p>FastAPI web app with plain-language search, source-linked results, search history, and credit-based plans.</p>
     </div>
   </div>
 </section>
@@ -1339,216 +1223,24 @@ footer {
 <section id="certifications">
   <div class="s-eyebrow">Credentials</div>
   <div class="cert-heading-row">
-    <div class="s-heading" style="margin-bottom:0"><em>Certifications</em></div>
-    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7494454713711509504/" target="_blank" class="cert-link-btn">View Certificate Post →</a>
+    <div class="s-heading" style="margin-bottom:0"><em>Learning</em></div>
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7494454713711509504/" target="_blank" rel="noopener" class="cert-link-btn">View Certificate Post →</a>
   </div>
   <div class="cert-list reveal" style="margin-top:40px">
     <div class="cert-row">
       <span class="cert-index">01</span>
       <div class="cert-body">
         <h4>Chatbot Development Guide 2025 — Beginner + Advanced</h4>
-        <p>Udemy · Eric Roby · Sept 2025 · 10 Hours</p>
+        <p>Udemy · Sept 2025 · <a href="https://ude.my/UC-e63d38aa-98b9-434d-970e-d77bfe7eef47" target="_blank" rel="noopener">Certificate</a></p>
       </div>
-      <span class="cert-badge">Verified ✓</span>
     </div>
     <div class="cert-row">
       <span class="cert-index">02</span>
       <div class="cert-body">
-        <h4>AI / Python Backend Development</h4>
-        <p>Udemy · Completed 2025</p>
+        <h4>Anthropic courses — Claude API, MCP, Agent Skills, Claude Code, AI Fluency</h4>
+        <p>Anthropic · 2026 · 20 course completions, listed in the certificate post above</p>
       </div>
-      <span class="cert-badge">Verified ✓</span>
     </div>
-    <div class="cert-row">
-      <span class="cert-index">03</span>
-      <div class="cert-body">
-        <h4>API Development & FastAPI Training</h4>
-        <p>Online Certification · Completed 2025</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">04</span>
-      <div class="cert-body">
-        <h4>Claude 101</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">05</span>
-      <div class="cert-body">
-        <h4>Introduction to Claude Cowork</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">06</span>
-      <div class="cert-body">
-        <h4>AI Fluency: Framework & Foundations</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">07</span>
-      <div class="cert-body">
-        <h4>AI Fluency: AI Capabilities & Limitations</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">08</span>
-      <div class="cert-body">
-        <h4>AI Fluency for Students</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">09</span>
-      <div class="cert-body">
-        <h4>Backend AI Engineering Internship</h4>
-        <p>FlyRank AI · Engaged July 2026</p>
-      </div>
-      <span class="cert-badge">Ongoing ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">10</span>
-      <div class="cert-body">
-        <h4>AI Fluency for Small Businesses</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">11</span>
-      <div class="cert-body">
-        <h4>AI Fluency for Educators</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">12</span>
-      <div class="cert-body">
-        <h4>Teaching the AI Fluency Framework</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">13</span>
-      <div class="cert-body">
-        <h4>AI Fluency for Nonprofits</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">14</span>
-      <div class="cert-body">
-        <h4>AI Fluency for Builders</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">15</span>
-      <div class="cert-body">
-        <h4>Claude Code 101</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">16</span>
-      <div class="cert-body">
-        <h4>Claude Code in Action</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">17</span>
-      <div class="cert-body">
-        <h4>Claude Platform 101</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">18</span>
-      <div class="cert-body">
-        <h4>Claude with the Anthropic API</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">19</span>
-      <div class="cert-body">
-        <h4>Introduction to Model Context Protocol</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">20</span>
-      <div class="cert-body">
-        <h4>Model Context Protocol: Advanced Topics</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">21</span>
-      <div class="cert-body">
-        <h4>Introduction to Agent Skills</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">22</span>
-      <div class="cert-body">
-        <h4>Introduction to Subagents</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">23</span>
-      <div class="cert-body">
-        <h4>Claude with Amazon Bedrock</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-    <div class="cert-row">
-      <span class="cert-index">24</span>
-      <div class="cert-body">
-        <h4>Claude with Google Vertex AI</h4>
-        <p>Anthropic · Completed 2026</p>
-      </div>
-      <span class="cert-badge">Verified ✓</span>
-    </div>
-  </div>
-</section>
-
-<hr class="sep">
-
-<!-- COMMUNITY -->
-<section id="community">
-  <div class="community-inner reveal">
-    <div class="community-eyebrow">Stay Connected</div>
-    <h2 class="community-heading">Join Our <em>Community</em></h2>
-    <p class="community-sub">
-      A space for builders working on AI backends, RAG systems, and automation to swap notes, share what's working, and learn from each other.
-    </p>
-    <a href="https://www.linkedin.com/groups/39551002/" target="_blank" class="community-btn">Join the LinkedIn Group →</a>
   </div>
 </section>
 
@@ -1559,13 +1251,13 @@ footer {
   <div class="contact-inner reveal">
     <div class="contact-heading">LET'S<br><span>BUILD.</span></div>
     <p class="contact-sub">
-      Available for freelance, contract work, and full-time roles.<br>
-      AI systems, backend architecture, automation — let's talk.
+      Open to conversations about AI products, backend systems, and collaboration.
     </p>
     <div class="contact-buttons">
       <a href="mailto:abdulwaarisinfo@gmail.com" class="contact-btn-solid">Start a Conversation →</a>
-      <a href="tel:+923260341402" class="contact-btn-ghost">+92 326 034 1402</a>
-      <a href="Muhammad_Waris_Resume%20(2).pdf" target="_blank" class="contact-btn-ghost">Download Resume ↓</a>
+      <a href="https://www.linkedin.com/in/warisali-dev/" target="_blank" rel="noopener" class="contact-btn-ghost">LinkedIn</a>
+      <a href="https://github.com/abdulwaarisinfo-dot" target="_blank" rel="noopener" class="contact-btn-ghost">GitHub</a>
+      <a href="Muhammad_Waris_Resume%20(3).pdf" target="_blank" rel="noopener" class="contact-btn-ghost">Resume ↓</a>
     </div>
     <div class="contact-details">
       <a href="mailto:abdulwaarisinfo@gmail.com" class="contact-detail-item">✉ abdulwaarisinfo@gmail.com</a>
@@ -1576,18 +1268,18 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-left">
-    Designed & built by <strong>Muhammad Waris Ali</strong> · AI Backend Engineer · Karachi, PK
+    Designed &amp; built by <strong>Muhammad Waris Ali</strong> · AI Product Builder · Pakistan
   </div>
   <div class="footer-right">
     <div class="footer-social">
-      <a href="https://www.linkedin.com/in/warisali-dev/" target="_blank" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/in/warisali-dev/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
       </a>
-      <a href="https://www.instagram.com/wwaris.tech.ai/" target="_blank" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      <a href="https://github.com/abdulwaarisinfo-dot" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.76 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
       </a>
     </div>
-    <span>© 2026 All rights reserved</span>
+    <span>© 2026 Muhammad Waris Ali</span>
   </div>
 </footer>
 
